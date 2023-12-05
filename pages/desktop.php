@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: /index.php');
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +8,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <title>Escritorio</title>
 </head>
 <body>
+
 <?php
     require_once "../partials/menu.php";
 ?>
-<hr>
 <?php
     require_once "../partials/calendario.php";
 ?>
+
 </body>
 </html>
