@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="section">    
-    <img src="../Assets/icono.png" alt="">
+    <a href="../pages/desktop.php"><img src="../Assets/icono.png" alt=""></a>
     <a href="../pages/balunek.html">Blunek</a>
     <a href="../pages/hunterdouglas.html">Hunter Douglas</a>
     <a href="../pages/pampaliving.html">Pampa Living</a>
