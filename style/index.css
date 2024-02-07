@@ -1,0 +1,175 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+    overflow: hidden;
+    height: 100vh;
+}
+.login {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(55, 55, 55);
+    width: 30%;
+    height: auto;
+    align-items:center ;
+    justify-content: center;   
+    text-align: center;
+    align-content: center;
+}
+.login img{
+    width: 100px;
+}
+.imgplace img{
+    height: 35px;
+    width: 35px;
+    margin-top: 8px;
+    margin-right: 280px;
+    justify-content: center;
+}
+.imgplace{
+    width: 75%;
+    margin-top: 40px;
+}
+.imgplace input{
+    display: flex;
+    position: absolute;
+    padding: 10px;
+    padding-left: 55px;
+    width:300px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 30px;
+    font-size: medium;
+    font-family: montserrat;
+    color: white;
+}
+.imgplace input::placeholder {
+    color: white;
+    font-weight: 100;
+    font-size: small;
+    margin-left: 100px;
+}
+.forget{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 10px;
+    width: 75%;
+    justify-content: space-between;
+}
+.forget input{
+    background-color: transparent;
+}
+.forget p{
+    font-size: x-small;
+    font-family: montserrat;
+    font-weight: 100;
+    color: white;
+}
+.forget a{
+    font-size: x-small;
+    font-family: montserrat;
+    font-weight: 100;
+    font-style: italic;
+    color: white;
+    text-decoration: none;
+}
+.forget a:hover{
+    color: white;
+    font-weight: 400;
+    scale: 1.1;
+}
+.ingresar{
+    margin-top: 50px;
+}
+.ingresar a{
+    margin-left: 13px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 80px;
+    padding-right: 80px;   
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    background-color: grey;
+}
+.ingresar:hover{
+    scale: 0.9;
+}
+
+.imagen{
+    background-image: url(../Assets/interior-cocina-moderna-colores-blancos.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/* Oculta el checkbox nativo */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #545454;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Estilo del cuadrado del checkbox cuando está chequeado */
+  input[type="checkbox"]:checked {
+    background-color: grey;
+    border-color: transparent;
+    color: white;
+  }
+  
+  /* Estilo del texto al lado del checkbox */
+  label {
+    font-size: x-small;
+    font-family: montserrat;
+    font-weight: 100;
+    color: white;
+    margin-right: 100px;
+  }
+  input[type="checkbox"]::before {
+    margin-left: 4px;
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  input[type="checkbox"]:checked::before {
+    opacity: 1;
+  }
+  .icono {
+    position: flex;
+  }
+  
+  .icono img {
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+  }
