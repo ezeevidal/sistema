@@ -8,7 +8,7 @@ body {
   
   .icono img {
     width: 200px;
-    position: absolute;
+    position: fixed ;
     bottom: 0;
     right: 0; 
   }
@@ -70,5 +70,131 @@ body {
 .link a:hover{
     scale: 0.9;
     font-weight: 400;
+}
+
+#calendario {
+    width: 300px;
+    height: 300px;
+    border: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-family: montserrat;
+    font-size: medium;
+    color: white;
+    padding: 10px;
+}
+
+.header div {
+    cursor: pointer;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-family: montserrat;
+    color: white;
+    font-size: small;
+}
+
+.day {
+    border: none;
+    padding: 10px 0;
+    font-family: montserrat;
+    color: white;
+}
+.day.today {
+    background-color: rgb(156, 156, 156);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.day:hover{
+    cursor: pointer;
+}
+.day-name {
+    font-weight: bold;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 5%;
+        
+}
+.recordatorios {
+    width: 300px;
+    height: 200px; /* Ajusta según necesites */
+    overflow-y: hidden; /* Activa la barra de desplazamiento vertical */
+    border: 2px solid #ffffff;
+    padding: 10px;
+    background-color: #858585;
+    border-radius: 40px;
+}
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.encabezado h2 {
+    font-weight: 400;
+    font-size: medium;
+    font-family: montserrat;
+    color: white;
+    display: flex;
+}
+.encabezado img{
+    width: 15px;
+    height: 15px;
+}
+hr{
+    width: 90%;
+    margin-top: -10px;
+}
+.recordatorios ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.recordatorios li {
+    list-style-type: none; /* Opcional: quitar los bullets de la lista */
+    margin-bottom: 10px;
+    font-family: montserrat;
+    font-size: small;
+    color: rgb(182, 182, 182);
+}
+/* Estilos específicos para la lista de recordatorios */
+#listaRecordatorios {
+    overflow-y: hidden; /* Habilita la barra de desplazamiento vertical si es necesario */
+}
+/* Estilos para el contenedor de la lista de recordatorios */
+#listaRecordatorios {
+    margin-right: 5%;
+    height: 90%;
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical si es necesario */
+    /* Establece una altura máxima para asegurar que el contenido pueda desbordarse */
+}
+
+/* Estilos específicos para el scrollbar en WebKit */
+#listaRecordatorios::-webkit-scrollbar {
+    width: 2px; /* Ancho del scrollbar */
+}
+
+#listaRecordatorios::-webkit-scrollbar-thumb {
+    background-color: #4c4c4c; /* Color del thumb del scrollbar */
+    border-radius: 10px; /* Borde redondeado del thumb */
+}
+
+#listaRecordatorios::-webkit-scrollbar-track {
+    background-color:rgb(131, 131, 131); /* Color de fondo del scrollbar */
 }
 
