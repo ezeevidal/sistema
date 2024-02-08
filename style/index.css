@@ -66,6 +66,49 @@ body{
 .forget input{
     background-color: transparent;
 }
+/* Oculta el checkbox nativo */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #545454;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Estilo del cuadrado del checkbox cuando está chequeado */
+  input[type="checkbox"]:checked {
+    background-color: grey;
+    border-color: transparent;
+    color: white;
+  }
+  
+  /* Estilo del texto al lado del checkbox */
+  label {
+    font-size: x-small;
+    font-family: montserrat;
+    font-weight: 100;
+    color: white;
+    margin-right: 100px;
+  }
+  input[type="checkbox"]::before {
+    margin-left: 4px;
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  input[type="checkbox"]:checked::before {
+    opacity: 1;
+  }
 .forget p{
     font-size: x-small;
     font-family: montserrat;
@@ -120,49 +163,7 @@ body{
 }
 
 
-/* Oculta el checkbox nativo */
-input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #545454;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    color: white;
-  }
-  
-  /* Estilo del cuadrado del checkbox cuando está chequeado */
-  input[type="checkbox"]:checked {
-    background-color: grey;
-    border-color: transparent;
-    color: white;
-  }
-  
-  /* Estilo del texto al lado del checkbox */
-  label {
-    font-size: x-small;
-    font-family: montserrat;
-    font-weight: 100;
-    color: white;
-    margin-right: 100px;
-  }
-  input[type="checkbox"]::before {
-    margin-left: 4px;
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-    opacity: 0;
-  }
-  input[type="checkbox"]:checked::before {
-    opacity: 1;
-  }
+
   .icono {
     position: flex;
   }

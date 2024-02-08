@@ -125,15 +125,12 @@ body {
     justify-content: space-evenly;
     padding: 0;
     margin: 5%;
-        
 }
 .recordatorios {
     width: 300px;
-    height: 200px; /* Ajusta según necesites */
-    overflow-y: hidden; /* Activa la barra de desplazamiento vertical */
     border: 2px solid #ffffff;
     padding: 10px;
-    background-color: #858585;
+    background-color: transparent;
     border-radius: 40px;
 }
 .encabezado{
@@ -161,40 +158,165 @@ hr{
     margin-top: -10px;
 }
 .recordatorios ul {
-    padding-left: 20px;
-    margin: 0;
+    padding: 20px;
+ margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .recordatorios li {
-    list-style-type: none; /* Opcional: quitar los bullets de la lista */
+    list-style-type: none; 
     margin-bottom: 10px;
     font-family: montserrat;
     font-size: small;
     color: rgb(182, 182, 182);
-}
-/* Estilos específicos para la lista de recordatorios */
-#listaRecordatorios {
-    overflow-y: hidden; /* Habilita la barra de desplazamiento vertical si es necesario */
-}
-/* Estilos para el contenedor de la lista de recordatorios */
-#listaRecordatorios {
-    margin-right: 5%;
-    height: 90%;
-    overflow-y: auto; /* Habilita la barra de desplazamiento vertical si es necesario */
-    /* Establece una altura máxima para asegurar que el contenido pueda desbordarse */
+    overflow-y: hidden;
 }
 
-/* Estilos específicos para el scrollbar en WebKit */
+#listaRecordatorios {
+    height: max-content;
+    overflow-y: hidden; 
+}
+.recordatorios{
+    overflow: hidden;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+#listaRecordatorios {
+    overflow-y:scroll;
+    margin-right: 5%;
+    height: 200px;
+}
+
+
 #listaRecordatorios::-webkit-scrollbar {
-    width: 2px; /* Ancho del scrollbar */
+    width: 2px; 
+    height: 20px;
 }
 
 #listaRecordatorios::-webkit-scrollbar-thumb {
-    background-color: #4c4c4c; /* Color del thumb del scrollbar */
-    border-radius: 10px; /* Borde redondeado del thumb */
+    background-color: #c5c5c5; 
+    border-radius: 10px; 
 }
 
 #listaRecordatorios::-webkit-scrollbar-track {
-    background-color:rgb(131, 131, 131); /* Color de fondo del scrollbar */
+    background-color:transparent; 
+}
+.tareas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.encabezadotareas{
+    margin-top: -130px;
+    width: 52%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.encabezadotareas h2{
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 400;
+    color: white;
+    padding: 30px;
+    text-align: left;
+}
+.encabezadotareas button{
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+}
+.listado{
+    width: 50%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 30px;
+}
+.hora{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 200;
+    color: white;
+}
+.listado span{
+    font-size: small;
+    font-family: montserrat;
+    color: white;
+    align-items: center;
+}
+.hora input{
+    background-color: transparent;
+}
+/* Oculta el checkbox nativo */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #545454;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Estilo del cuadrado del checkbox cuando está chequeado */
+  input[type="checkbox"]:checked {
+    background-color: grey;
+    border-color: transparent;
+    color: white;
+  }
+  
+  /* Estilo del texto al lado del checkbox */
+  label {
+    font-size: x-small;
+    font-family: montserrat;
+    font-weight: 100;
+    color: white;
+    margin-right: 100px;
+  }
+  input[type="checkbox"]::before {
+    margin-left: 4px;
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
+  input[type="checkbox"]:checked::before {
+    opacity: 1;
+  }
+.observaciones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+}
+.observaciones span{
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+.observaciones a{
+    text-decoration: none;
+    font-weight: 200;
 }
 
+.observaciones a span:hover{
+    cursor: pointer;
+    font-weight: 400;
+
+}
