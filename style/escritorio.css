@@ -73,8 +73,9 @@ body {
 
 #calendario {
     width: 300px;
-    height: 300px;
+    height: 00px;
     border: none;
+    margin-left: 100px;
 }
 
 .header {
@@ -126,11 +127,14 @@ body {
     margin: 5%;
 }
 .recordatorios {
-    width: 300px;
-    border: 2px solid #ffffff;
+    width: 25%;
+    margin-right: 5%;
+    border: 1px solid #ffffff;
     padding: 10px;
     background-color: transparent;
-    border-radius: 40px;
+    border-radius: 20px;
+    margin-left: -100px;
+    overflow: hidden;
 }
 .encabezado{
     display: flex;
@@ -153,13 +157,19 @@ body {
     height: 15px;
 }
 hr{
-    width: 90%;
-    margin-top: -10px;
+    height: 1px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 95%;
+    margin-top: 0px;
+
 }
 .recordatorios ul {
     padding: 20px;
- margin-bottom: 30px;
-    overflow: hidden;
+    margin-bottom: 0px;
+    overflow-y: hidden;
+    margin-top: -10px;
 }
 
 .recordatorios li {
@@ -184,7 +194,7 @@ hr{
 #listaRecordatorios {
     overflow-y:scroll;
     margin-right: 5%;
-    height: 200px;
+    height: 100px;
 }
 
 
@@ -194,12 +204,13 @@ hr{
 }
 
 #listaRecordatorios::-webkit-scrollbar-thumb {
-    background-color: #c5c5c5; 
-    border-radius: 10px; 
+    background-color: #c5c5c5;
+
 }
 
 #listaRecordatorios::-webkit-scrollbar-track {
     background-color:transparent; 
+    margin-top: 30px;
 }
 .tareas{
     display: flex;
