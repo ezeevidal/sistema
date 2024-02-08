@@ -9,39 +9,72 @@
 </head>
 
 <body>
-        <div class="users">
-            <p>Gerencia</p>
-            <img src="../Assets/Recurso 4.png" alt="">
-            <img src="../Assets/logout.png" alt="">
+    <div class="users">
+        <p>Gerencia</p>
+        <img src="../Assets/Recurso 4.png" alt="">
+        <img src="../Assets/logout.png" alt="">
+    </div>
+    <div class="menu">
+        <img src="../Assets/Recurso 1.png" alt="">
+        <div class="link">
+            <a href="http://">Balunek</a>
+            <a href="http://">Hunter Douglas</a>
+            <a href="http://">Archivos</a>
+            <a href="http://">Contable</a>
+            <a href="http://">Estadísticas</a>
         </div>
-        <div class="menu">
-            <img src="../Assets/Recurso 1.png" alt="">
-            <div class="link">
-                <a href="http://">Balunek</a>
-                <a href="http://">Hunter Douglas</a>
-                <a href="http://">Archivos</a>
-                <a href="http://">Contable</a>
-                <a href="http://">Estadísticas</a>
-            </div>
-        </div>
+    </div>
     <div class="icono">
         <img src="../Assets/Recurso 2.png" alt="">
     </div>
     <div class="content">
         <div id="calendario"></div>
         <div id="recordatorios" class="recordatorios">
-            <div class="encabezado">
+            <div class="encabezado" style="position: relative;">
                 <h2>RECORDATORIOS</h2>
-                <img src="../Assets/Copia de Recurso 1.png" alt="">
+                <a href="#" id="abrirPopup" title="Crear recordatorio">+</a>
+                <img src="../Assets/Copia de Recurso 1.png" alt="" id="imagenDesplegable">
+                <div class="alerta"><span>5</span></div>
+                <div id="listaDesplegable" class="lista-oculta">
+                    <ul>
+                        <!--Borra toda la lista de recordatorios--> <li>Borrar notificaciones</li>
+                        <hr>
+                        <!--Elimina solamente la alerta roja--> <li>Limpiar alertas</li>
+                    </ul>
+                </div>
             </div>
-        <hr>
+            
+            
+            <hr>
             <ul id="listaRecordatorios"></ul>
         </div>
     </div>
 
+    <script>
+
+
+        // Función para generar la lista de recordatorios con checkboxes
+        function generarLista() {
+            const lista = document.getElementById('listaRecordatorios');
+            recordatorios.forEach((recordatorio, indice) => {
+                const idCheckbox = `checkbox-${indice}`; // Generar un ID único para cada checkbox
+                const elemento = document.createElement('li'); // Crear un li para cada recordatorio
+                elemento.innerHTML = `
+                    <input type="checkbox" name="recordatorio-${indice}" id="${idCheckbox}">
+                    <label for="${idCheckbox}">${recordatorio}</label>
+                `;
+                lista.appendChild(elemento); // Agregar el li al ul de la lista
+            });
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = function () {
+            generarLista();
+        };
+    </script>
     <div class="tareas">
         <div class="encabezadotareas">
-            <h2>TAREAS</h2>
+            <h2>TAREAS DEL DIA</h2>
             <a href=""><button>Calendario</button></a>
         </div>
     </div>
@@ -99,13 +132,18 @@
         </div>
     </div>
 
-
-
-
-
-
     <script src="../js/calendario.js"></script>
     <script src="../js/recordatorios.js"></script>
+    
+<!--Popup recordatorios-->
+    <div id="popupAgregarRecordatorio" class="popup">
+            <span class="close" title="Cerrar ventana">&times;</span>
+            <h3>Agregar Recordatorio</h3>
+            <input type="text" id="nuevoRecordatorio" placeholder="Observaciones">
+            <br>
+            <button id="agregarRecordatorio">Agregar recordatorio</button>
+    </div>
+
 </body>
 
 </html>

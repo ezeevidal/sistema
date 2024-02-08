@@ -1,5 +1,7 @@
 body {
     background-color: rgb(55, 55, 55);
+    margin: 0;
+    padding: 0;
 }
 
 .icono {
@@ -42,12 +44,16 @@ body {
     flex-direction: column;
     justify-content: center;
     z-index: 99;
+    margin: 0 auto;
 }
 .menu img{
     width: 300px;
     margin: 0 auto;
 }
 .link{
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
     margin-top: 3%;
     display: flex;
     flex-direction: row;
@@ -56,10 +62,10 @@ body {
 .link a{
     border: 1px solid grey;
     background: grey;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 30px;
     font-size: medium;
     font-family: montserrat;
@@ -68,7 +74,8 @@ body {
     text-decoration: none;
 }
 .link a:hover{
-    font-weight: 400;
+    cursor: pointer;
+    scale: 1.01;
 }
 
 #calendario {
@@ -152,9 +159,21 @@ body {
     color: white;
     display: flex;
 }
+.encabezado a{
+    margin-right: -155px;
+    font-size: 20pt;
+    font-family: montserrat;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
 .encabezado img{
     width: 15px;
     height: 15px;
+}
+.encabezado img:hover{
+    cursor: pointer;
+
 }
 hr{
     height: 1px;
@@ -239,8 +258,13 @@ hr{
     border-radius: 30px;
     background-color: transparent;
     border: 1px solid grey;
-    color: grey;
+    color: white;
     cursor: pointer;
+    font-weight: 100;
+}
+.encabezadotareas a button{
+    font-weight: 100;
+    font-family: montserrat;
 }
 .listado{
     width: 50%;
@@ -330,4 +354,146 @@ input[type="checkbox"] {
     cursor: pointer;
     font-weight: 400;
 
+}
+
+/* Estilo base del popup */
+.popup {    
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se queda fijo en la pantalla */
+    z-index: 2; /* Asegura que el popup esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    overflow: auto; /* Permite scroll si el contenido es muy grande */
+}
+.popup h3{
+    font-weight: 200;
+    font-size: large;
+    font-family: montserrat;
+    color: white;
+    margin-top: 10%;
+}
+/* Contenedor del contenido del popup */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 10% auto; /* Centrado verticalmente y con margen */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    width: 50%; /* Ancho del contenido */
+    max-width: 600px; /* Máximo ancho */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Sombra para dar profundidad */
+}
+
+/* Botón de cerrar */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el formulario dentro del popup */
+.popup input[type="text"],
+.popup input[type="date"] {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    width: calc(11.3% - 20px); /* Ajusta el ancho al contenedor */
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes redondeados para los inputs */
+}
+
+/* Botón para agregar el recordatorio */
+#agregarRecordatorio {
+    background-color: transparent; 
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#agregarRecordatorio:hover {
+    color: grey;
+    background-color: #ffffff; /* Oscurecer el botón ligeramente al pasar el mouse */
+}
+.encabezado {
+    position: relative; /* Hace que .alerta se posicione relativo a .encabezado */
+}
+
+.alerta {
+    font-family: montserrat;
+    position: absolute; /* Posiciona .alerta en relación a su contenedor .encabezado */
+    top: 5; /* Ajusta para alinear en la esquina superior */
+    right: 0; /* Ajusta para alinear a la derecha */
+    background-color: red; /* Fondo rojo para el círculo */
+    color: white; /* Texto en color blanco */
+    border-radius: 50%; /* Hace que .alerta sea un círculo */
+    width: 15px; /* Ajusta el tamaño del círculo */
+    height: 15px; /* Ajusta el tamaño del círculo */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    font-size: 10px; /* Tamaño del texto dentro del círculo */
+    transform: translate(50%, -50%); /* Ajusta la posición para que sobresalga correctamente */
+}
+
+.alerta span {
+    display: block;
+}
+
+.lista-oculta {
+    display: none;
+}
+.lista-visible {
+    padding: 1%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute; /* Posicionamiento absoluto para la lista desplegable */
+    right: 0; /* Ajusta estas propiedades según la ubicación deseada de la lista */
+    top: 100%; /* Coloca la lista justo debajo del elemento que la dispara */
+    background-color: rgb(55, 55, 55);
+    border: 1px solid #ddd; /* Borde ligero para la lista */
+    margin-top: -10px;
+    border-radius: 5px;
+    overflow:auto;
+    z-index: 100; /* Asegura que la lista se muestre por encima de otros contenidos */
+}
+
+#listaDesplegable::-webkit-scrollbar {
+    width: 2px; 
+    height: 20px;
+}
+
+#listaDesplegable::-webkit-scrollbar-thumb {
+    background-color: #c5c5c5;
+}
+
+#listaDesplegable::-webkit-scrollbar-track {
+    background-color:transparent; 
+    margin-top: 30px;
+}
+#listaDesplegable ul li:hover{
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
 }
