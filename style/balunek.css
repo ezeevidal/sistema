@@ -1,0 +1,85 @@
+body {
+    background-color: rgb(55, 55, 55);
+    margin: 0;
+    padding: 0;
+}
+
+.icono {
+    position: flex;
+  }
+  
+  .icono img {
+    width: 200px;
+    position: fixed ;
+    bottom: 0;
+    right: 0; 
+  }
+  
+
+/* Contenido */
+.users{
+    margin: 10px;
+    width: 10%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:88%;
+
+}
+.users p{
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 200;
+    color: white;
+    text-decoration: none;
+}
+.users img{
+    width: 30px;
+    height: 30px;
+    background-color: grey;
+    border-radius: 50%;
+}
+.menu{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 99;
+    margin: 0 auto;
+}
+.menu img{
+    width: 300px;
+    margin: 0 auto;
+}
+.link{
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.link a{
+    border: 1px solid grey;
+    background: grey;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 200;
+    color: white;
+    text-decoration: none;
+}
+.link a:hover{
+    cursor: pointer;
+    scale: 1.01;
+}
+
+/*FIN CABECERA*/
+
+

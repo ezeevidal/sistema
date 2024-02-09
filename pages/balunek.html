@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/balunek.css">
+    <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritorio</title>
+</head>
+
+<body>
+    <!--Usuarios-->
+    <div class="users">
+        <p>Inicio</p>
+        <a href="../pages/escritorio.html"><img src="../Assets/home.png" alt=""></a>
+        <div id="cambiarUsuarioTrigger">
+            <img src="../Assets/Recurso 4.png" alt="Cambiar usuario">
+        </div>
+        <div id="opcionesUsuario" style="display: none;">
+            <div class="avatar">
+                <img src="../Assets/Recurso 4.png" alt="">
+                <button class="opcionUsuario" data-usuario="Gerencia">Gerencia</button>
+            </div>
+            <div class="avatar">
+                <img src="../Assets/Recurso 4.png" alt="">
+                <button class="opcionUsuario" data-usuario="Ventas">Ventas</button>
+            </div>
+            <div class="avatar">
+                <img src="../Assets/Recurso 4.png" alt="">
+                <button class="opcionUsuario" data-usuario="Administracion">Administración</button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cambiarUsuarioTrigger = document.getElementById('cambiarUsuarioTrigger');
+                const opcionesUsuario = document.getElementById('opcionesUsuario');
+
+                cambiarUsuarioTrigger.addEventListener('click', function () {
+                    opcionesUsuario.style.display = opcionesUsuario.style.display === 'none' ? 'block' : 'none';
+                });
+
+                // Manejar la selección de un nuevo usuario
+                document.querySelectorAll('.opcionUsuario').forEach(boton => {
+                    boton.addEventListener('click', function () {
+                        const usuarioSeleccionado = this.getAttribute('data-usuario');
+                        console.log(`Usuario seleccionado: ${usuarioSeleccionado}`);
+                        // Aquí puedes añadir lógica adicional para manejar el cambio de usuario
+                        // Por ejemplo, actualizar la UI o realizar una petición al servidor con el nuevo usuario
+                        opcionesUsuario.style.display = 'none'; // Ocultar las opciones después de seleccionar
+                    });
+                });
+            });
+
+        </script>
+        <!--Cerrar sesion-->
+        <img src="../Assets/logout.png" alt="" title="Cerrar sesión">
+    </div>
+
+
+
+    <div class="menu">
+        <img src="../Assets/balunek.png" alt="">
+        <div class="link">
+            <a href="#">Presupuestos</a>
+            <a href="http://">Clientes</a>
+            <a href="http://">Fotos</a>
+            <a href="http://">Archivos</a>
+            <a href="http://">Stock</a>
+        </div>
+    </div>
+    <!--imagen Esquina inferior derecha-->
+    <div class="icono">
+        <img src="../Assets/Recurso 2.png" alt="">
+    </div>
+
+<!--Fin cabecera-->
+</body>
+</html>
