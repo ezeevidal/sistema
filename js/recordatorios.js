@@ -1,97 +1,69 @@
-// Ejemplo de función para agregar recordatorios
-function agregarRecordatorios() {
-    const listaRecordatorios = document.getElementById('listaRecordatorios');
+document.addEventListener('DOMContentLoaded', function() {
+    function agregarRecordatorios() {
+        const listaRecordatorios = document.getElementById('listaRecordatorios');
+        listaRecordatorios.innerHTML = ''; // Limpiar lista existente
 
-    // Limpiar lista existente
-    listaRecordatorios.innerHTML = '';
+        const recordatorios = [
+            "Pagar el alquiler el día 10/3",
+            "Cita con el dentista",
+            "Reunión de trabajo a las 3 PM",
+            "Pagar luz",
+            "Pagar agua",
+            "Pagar gas",
+            // Agrega más recordatorios aquí
+        ];
 
-    // Ejemplo de recordatorios
-    const recordatorios = [
-        "Pagar el alquiler el dia 10/3",
-        "Cita con el dentista",
-        "Reunión de trabajo a las 3 PM",
-        "Pagar el alquiler",
-        "Cita con el dentista",
-        "Reunión de trabajo a las 3 PM",
-        "Pagar el alquiler",
-        "Cita con el dentista",
-        "Reunión de trabajo a las 3 PM"
-    ];
-    function generarLista() {
-        const lista = document.getElementById('lista-recordatorios');
-        recordatorios.forEach((recordatorio, indice) => {
-            const idCheckbox = `checkbox-${indice}`; // Generar un ID único para cada checkbox
-            const elemento = document.createElement('div'); // Crear un div para cada recordatorio
-            elemento.innerHTML = `
-                <input type="checkbox" name="recordatorio-${indice}" id="${idCheckbox}">
-                <label for="${idCheckbox}">${recordatorio}</label>
-            `;
-            lista.appendChild(elemento); // Agregar el div al contenedor de la lista
+        recordatorios.forEach((recordatorio, index) => {
+            const item = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = `checkbox-${index}`;
+            checkbox.className = 'checkbox-custom';
+
+            const label = document.createElement('label');
+            label.htmlFor = `checkbox-${index}`;
+            label.textContent = recordatorio;
+            label.className = 'checkbox-custom-label';
+
+            // Importante: primero añadir el checkbox y luego el label
+            item.appendChild(checkbox);
+            item.appendChild(label);
+            listaRecordatorios.appendChild(item);
         });
     }
 
-    // Ejecutar la función al cargar la página
-    window.onload = function() {
-        generarLista();
-    };
-    // Agregar recordatorios a la lista
-    recordatorios.forEach(recordatorio => {
-        const item = document.createElement('li');
-        item.textContent = recordatorio;
-        listaRecordatorios.appendChild(item);
-    });
-}
-
-// Llamar a agregarRecordatorios() para inicializar los recordatorios
-document.addEventListener('DOMContentLoaded', function() {
-    // Asegúrate de llamar a esta función dentro de tu carga de DOM existente
-    // y después de generar el calendario si es relevante
     agregarRecordatorios();
-});
 
-
-
-
-
-
-//POPUP RECORDATORIOS
-
-// Asegurándose de que el DOM esté completamente cargado antes de asignar eventos
-document.addEventListener('DOMContentLoaded', function () {
-    // Abre el popup
+    // Código para manejar popup de agregar recordatorios
     document.getElementById('abrirPopup').addEventListener('click', function() {
         document.getElementById('popupAgregarRecordatorio').style.display = 'block';
     });
 
-    // Cierra el popup
     document.querySelector('#popupAgregarRecordatorio .close').addEventListener('click', function() {
         document.getElementById('popupAgregarRecordatorio').style.display = 'none';
     });
 
-    // Agregar recordatorio
+    // Código para agregar un nuevo recordatorio desde el popup (asumiendo que tienes un input y botón configurados correctamente)
     document.getElementById('agregarRecordatorio').addEventListener('click', function() {
         const nuevoRecordatorio = document.getElementById('nuevoRecordatorio').value;
+        // Asume que existe un input para la fecha del recordatorio en tu HTML
         const fechaRecordatorio = document.getElementById('fechaRecordatorio').value;
         if (nuevoRecordatorio && fechaRecordatorio) {
-            recordatorios.push(`${nuevoRecordatorio} - ${fechaRecordatorio}`);
+            // Agrega el nuevo recordatorio a la lista y limpia los inputs
+            const recordatorios = [`${nuevoRecordatorio} - ${fechaRecordatorio}`];
+            agregarRecordatorios(recordatorios); // Actualiza la lista de recordatorios con la nueva entrada
             document.getElementById('nuevoRecordatorio').value = '';
             document.getElementById('fechaRecordatorio').value = '';
             document.getElementById('popupAgregarRecordatorio').style.display = 'none';
-            generarLista(); // Regenera la lista para incluir el nuevo recordatorio
         } else {
-            alert('Por favor, completa todos los campos');
+            alert('Por favor, completa todos los campos.');
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Referencia a la imagen y a la lista desplegable
+    // Código para manejar la imagen desplegable y la lista asociada
     var imagen = document.getElementById('imagenDesplegable');
     var lista = document.getElementById('listaDesplegable');
-
-    // Manejar el clic en la imagen
     imagen.addEventListener('click', function() {
-        // Alternar la visibilidad de la lista desplegable
         if (lista.classList.contains('lista-oculta')) {
             lista.classList.remove('lista-oculta');
             lista.classList.add('lista-visible');

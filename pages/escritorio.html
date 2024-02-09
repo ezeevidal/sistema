@@ -4,15 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/escritorio.css">
+    <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escritorio</title>
 </head>
 
 <body>
+    <!--Usuarios-->
     <div class="users">
         <p>Gerencia</p>
-        <img src="../Assets/Recurso 4.png" alt="">
-        <img src="../Assets/logout.png" alt="">
+        <div id="cambiarUsuarioTrigger">
+            <img src="../Assets/Recurso 4.png" alt="Cambiar usuario">
+        </div>
+        <div id="opcionesUsuario" style="display: none;">
+            <div class="avatar">
+                <img src="../Assets/Recurso 4.png" alt="">
+                <button class="opcionUsuario" data-usuario="Gerencia">Gerencia</button>
+            </div>
+            <div class="avatar">
+                <img src="../Assets/Recurso 4.png" alt="">
+                <button class="opcionUsuario" data-usuario="Ventas">Ventas</button>
+            </div>
+            <div class="avatar">
+                <img src="../Assets/Recurso 4.png" alt="">
+                <button class="opcionUsuario" data-usuario="Administracion">Administración</button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cambiarUsuarioTrigger = document.getElementById('cambiarUsuarioTrigger');
+                const opcionesUsuario = document.getElementById('opcionesUsuario');
+
+                cambiarUsuarioTrigger.addEventListener('click', function () {
+                    opcionesUsuario.style.display = opcionesUsuario.style.display === 'none' ? 'block' : 'none';
+                });
+
+                // Manejar la selección de un nuevo usuario
+                document.querySelectorAll('.opcionUsuario').forEach(boton => {
+                    boton.addEventListener('click', function () {
+                        const usuarioSeleccionado = this.getAttribute('data-usuario');
+                        console.log(`Usuario seleccionado: ${usuarioSeleccionado}`);
+                        // Aquí puedes añadir lógica adicional para manejar el cambio de usuario
+                        // Por ejemplo, actualizar la UI o realizar una petición al servidor con el nuevo usuario
+                        opcionesUsuario.style.display = 'none'; // Ocultar las opciones después de seleccionar
+                    });
+                });
+            });
+
+        </script>
+        <!--Cerrar sesion-->
+        <img src="../Assets/logout.png" alt="" title="Cerrar sesión">
     </div>
     <div class="menu">
         <img src="../Assets/Recurso 1.png" alt="">
@@ -24,60 +66,197 @@
             <a href="http://">Estadísticas</a>
         </div>
     </div>
+    <!--imagen Esquina inferior derecha-->
     <div class="icono">
         <img src="../Assets/Recurso 2.png" alt="">
     </div>
     <div class="content">
+        <!--CALENDARIO-->
         <div id="calendario"></div>
+
+
+
+        <!-- Modal para agregar recordatorio -->
+        <div id="modalRecordatorio" class="modalrec"
+            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+            <div class="modalrecuno">
+                <h3>Agregar Recordatorio</h3>
+                <label for="usuarioSelect">Usuario:</label>
+                <select id="usuarioSelect">
+                    <option value="Gerencia">Gerencia</option>
+                    <option value="Vendedor">Ventas</option>
+                    <option value="Vendedor">Administración</option>
+                </select>
+                <div>
+                    <label for="recordatorioInput">Recordatorio:</label>
+                    <input type="text" id="recordatorioInput">
+                </div>
+                <div>
+                    <label for="horaInicioInput">Hora de inicio (HH:MM):</label>
+                    <input type="time" id="horaInicioInput">
+                </div>
+                <div>
+                    <label for="horaFinInput">Hora de fin (HH:MM):</label>
+                    <input type="time" id="horaFinInput">
+                </div>
+                <div>
+                    <label for="alertaSelect">Alerta:</label><br>
+                    <select id="alertaSelect">
+                        <option value="24">24 horas antes</option>
+                        <option value="48">2 días antes</option>
+                        <option value="168">7 días antes</option>
+                    </select>
+                </div>
+                <button id="btnGuardar">Guardar</button>
+                <button id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+        <div id="popupMensaje"
+            style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background-color:white; padding:20px; border-radius:5px; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:100;">
+            Recordatorio guardado correctamente
+        </div>
+
+
+
+        <!--RECORDATORIOS-->
         <div id="recordatorios" class="recordatorios">
             <div class="encabezado" style="position: relative;">
+                <!--MOSTRAR LOS RECORDATORIOS DE LOS PROXIMOS 7 DIAS-->
                 <h2>RECORDATORIOS</h2>
-                <a href="#" id="abrirPopup" title="Crear recordatorio">+</a>
+
                 <img src="../Assets/Copia de Recurso 1.png" alt="" id="imagenDesplegable">
-                <div class="alerta"><span>5</span></div>
-                <div id="listaDesplegable" class="lista-oculta">
-                    <ul>
-                        <!--Borra toda la lista de recordatorios--> <li>Borrar notificaciones</li>
-                        <hr>
-                        <!--Elimina solamente la alerta roja--> <li>Limpiar alertas</li>
-                    </ul>
+                <!-- Popup para seleccionar el usuario del recordatorio -->
+                <div id="popupUsuario">
+                    <h2>¿Qué deseas recordar?</h2>
+                    <input type="text" id="textoRecordatorio">
+                    <h2>¿Para quién es el recordatorio?</h2>
+                    <button id="recordatorioGerencia">Gerencia</button>
+                    <button id="recordatorioVentas">Ventas</button>
+                    <button id="recordatorioAdministracion">Administración</button><br><br>
+                    <button id="enviarRecordatorio">Enviar recordatorio</button>
+                    <button id="cerrarPopup">Cerrar</button>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const imagenDesplegable = document.getElementById('imagenDesplegable');
+                        const popupUsuario = document.getElementById('popupUsuario');
+                        const cerrarPopup = document.getElementById('cerrarPopup');
+                        const botonesUsuario = document.querySelectorAll('#recordatorioGerencia, #recordatorioVentas, #recordatorioAdministracion');
+
+                        imagenDesplegable.addEventListener('click', function () {
+                            popupUsuario.style.display = 'block';
+                        });
+
+                        cerrarPopup.addEventListener('click', function () {
+                            popupUsuario.style.display = 'none';
+                        });
+
+                        botonesUsuario.forEach(boton => {
+                            boton.addEventListener('click', function () {
+                                // Quitar la clase activa de todos los botones
+                                botonesUsuario.forEach(boton => boton.classList.remove('button-active'));
+                                // Añadir la clase activa solo al botón clickeado
+                                this.classList.add('button-active');
+                                console.log(`Recordatorio para ${this.textContent}`);
+                            })
+                        });
+
+                        enviarRecordatorio.addEventListener('click', function () {
+                            var textoRecordatorio = document.getElementById('textoRecordatorio').value;
+                            console.log('Enviando recordatorio:', textoRecordatorio);
+                            // Aquí podrías añadir lógica para realmente enviar el recordatorio
+                            popupUsuario.style.display = 'none';
+                        });
+
+                        // Asumiendo que quieres hacer algo específico para cada departamento
+                        document.getElementById('recordatorioGerencia').addEventListener('click', function () {
+                            console.log('Recordatorio para Gerencia');
+                        });
+
+                        document.getElementById('recordatorioVentas').addEventListener('click', function () {
+                            console.log('Recordatorio para Ventas');
+                        });
+
+                        document.getElementById('recordatorioAdministracion').addEventListener('click', function () {
+                            console.log('Recordatorio para Administración');
+                        });
+                    });
+                </script>
+                <!--AL PRESIONAR LA ALERTA O IMAGEN DE LA CAMPANITA 
+                    BORRAR SOLAMENTE EL SPAN HASTA QUE 
+                    LLEGA UN NUEVO RECORDATORIO-->
+                <div class="alerta"><span>6</span></div>
             </div>
-            
-            
             <hr>
-            <ul id="listaRecordatorios"></ul>
+            <ul id="listaRecordatorios">
+                <label for="checkbox1" class="checkbox-custom-label"></label>
+                <input type="checkbox" id="checkbox1" class="checkbox-custom">
+            </ul>
         </div>
     </div>
 
-    <script>
 
-
-        // Función para generar la lista de recordatorios con checkboxes
-        function generarLista() {
-            const lista = document.getElementById('listaRecordatorios');
-            recordatorios.forEach((recordatorio, indice) => {
-                const idCheckbox = `checkbox-${indice}`; // Generar un ID único para cada checkbox
-                const elemento = document.createElement('li'); // Crear un li para cada recordatorio
-                elemento.innerHTML = `
-                    <input type="checkbox" name="recordatorio-${indice}" id="${idCheckbox}">
-                    <label for="${idCheckbox}">${recordatorio}</label>
-                `;
-                lista.appendChild(elemento); // Agregar el li al ul de la lista
-            });
-        }
-
-        // Ejecutar la función al cargar la página
-        window.onload = function () {
-            generarLista();
-        };
-    </script>
     <div class="tareas">
         <div class="encabezadotareas">
+            <!--MOSTRAR TAREAS SEGUN EL DIA DEL CALENDARIO QUE ELIJAS-->
+            <!--ELIMINAR TAREA DEL DIA SI SE PRESIONO EL CHECKBOX - SOLICITAR CONFIRMACION-->
             <h2>TAREAS DEL DIA</h2>
-            <a href=""><button>Calendario</button></a>
+            <button id="botonCalendario">Calendario</button>
+            <div id="popupTarea" style="display:none;">
+                <h2>Crear nueva tarea</h2>
+                <form id="formularioTarea">
+                    <label for="usuarioTarea">Usuario:</label>
+                    <input type="text" id="usuarioTarea" name="usuario">
+                    <br>
+                    <label for="clienteTarea">Cliente:</label>
+                    <input type="text" id="clienteTarea" name="cliente" placeholder="N/A">
+                    <br>
+                    <label for="fechaTarea">Fecha:</label>
+                    <input type="date" id="fechaTarea" name="fecha">
+                    <br>
+                    <label for="tituloTarea">Título:</label>
+                    <input type="text" id="tituloTarea" name="titulo">
+                    <br>
+                    <label for="observacionesTarea">Observaciones:</label>
+                    <textarea id="observacionesTarea" name="observaciones"></textarea>
+                    <br>
+                    <button type="submit">Agregar Tarea</button>
+                    <br>
+                    <button id="cerrarPopup">Cerrar</button>
+                </form>
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const botonCalendario = document.getElementById('botonCalendario');
+            const popupTarea = document.getElementById('popupTarea');
+            const cerrarPopup = document.getElementById('cerrarPopup');
+            const formularioTarea = document.getElementById('formularioTarea');
+
+            botonCalendario.addEventListener('click', function () {
+                popupTarea.style.display = 'block';
+            });
+
+            cerrarPopup.addEventListener('click', function () {
+                popupTarea.style.display = 'none';
+            });
+
+            formularioTarea.addEventListener('submit', function (event) {
+                event.preventDefault();
+                // Aquí puedes añadir la lógica para procesar los datos del formulario
+                console.log("Formulario enviado");
+                // Ejemplo: imprimir los valores del formulario en la consola
+                console.log("Usuario:", document.getElementById('usuarioTarea').value);
+                console.log("Cliente:", document.getElementById('clienteTarea').value);
+                // Cierra el popup después de enviar
+                popupTarea.style.display = 'none';
+            });
+        });
+
+    </script>
+
     <hr style="width: 51%;justify-content: center;margin-top: -30px;">
 
 
@@ -99,8 +278,8 @@
     </div>
 
 
-
-    <div class="listado"> <!--Bucle segun los recordatorios-->
+    <!--Bucle segun los recordatorios-->
+    <div class="listado">
         <div class="hora">
             <span>15:00</span>
             <span>16:00</span>
@@ -116,8 +295,8 @@
     </div>
 
 
-
-    <div class="listado"> <!--Bucle segun los recordatorios-->
+    <!--Bucle segun los recordatorios-->
+    <div class="listado">
         <div class="hora">
             <span>16:00</span>
             <span>17:00</span>
@@ -131,18 +310,95 @@
             <input type="checkbox" name="" id="">
         </div>
     </div>
+    <!--Fin del bucle-->
+
+        <!--Bucle segun los recordatorios-->
+        <div class="listado">
+            <div class="hora">
+                <span>16:00</span>
+                <span>17:00</span>
+                <hr style="transform: rotate(90deg);width: 30px;margin-top: -20px;margin-left: 30px;">
+            </div>
+            <div class="observaciones">
+                <span>Pedir expreso - Georgina Olivares</span>
+                <a href="#"><span>Observaciones</span></a>
+            </div>
+            <div class="hora">
+                <input type="checkbox" name="" id="">
+            </div>
+        </div>
+        <!--Fin del bucle-->
+
+            <!--Bucle segun los recordatorios-->
+    <div class="listado">
+        <div class="hora">
+            <span>16:00</span>
+            <span>17:00</span>
+            <hr style="transform: rotate(90deg);width: 30px;margin-top: -20px;margin-left: 30px;">
+        </div>
+        <div class="observaciones">
+            <span>Pedir expreso - Georgina Olivares</span>
+            <a href="#"><span>Observaciones</span></a>
+        </div>
+        <div class="hora">
+            <input type="checkbox" name="" id="">
+        </div>
+    </div>
+    <!--Fin del bucle-->
+
+        <!--Bucle segun los recordatorios-->
+        <div class="listado">
+            <div class="hora">
+                <span>16:00</span>
+                <span>17:00</span>
+                <hr style="transform: rotate(90deg);width: 30px;margin-top: -20px;margin-left: 30px;">
+            </div>
+            <div class="observaciones">
+                <span>Pedir expreso - Georgina Olivares</span>
+                <a href="#"><span>Observaciones</span></a>
+            </div>
+            <div class="hora">
+                <input type="checkbox" name="" id="">
+            </div>
+        </div>
+        <!--Fin del bucle-->
+
+            <!--Bucle segun los recordatorios-->
+    <div class="listado">
+        <div class="hora">
+            <span>16:00</span>
+            <span>17:00</span>
+            <hr style="transform: rotate(90deg);width: 30px;margin-top: -20px;margin-left: 30px;">
+        </div>
+        <div class="observaciones">
+            <span>Pedir expreso - Georgina Olivares</span>
+            <a href="#"><span>Observaciones</span></a>
+        </div>
+        <div class="hora">
+            <input type="checkbox" name="" id="">
+        </div>
+    </div>
+    <!--Fin del bucle-->
+
+        <!--Bucle segun los recordatorios-->
+        <div class="listado">
+            <div class="hora">
+                <span>16:00</span>
+                <span>17:00</span>
+                <hr style="transform: rotate(90deg);width: 30px;margin-top: -20px;margin-left: 30px;">
+            </div>
+            <div class="observaciones">
+                <span>Pedir expreso - Georgina Olivares</span>
+                <a href="#"><span>Observaciones</span></a>
+            </div>
+            <div class="hora">
+                <input type="checkbox" name="" id="">
+            </div>
+        </div>
+        <!--Fin del bucle-->
 
     <script src="../js/calendario.js"></script>
     <script src="../js/recordatorios.js"></script>
-    
-<!--Popup recordatorios-->
-    <div id="popupAgregarRecordatorio" class="popup">
-            <span class="close" title="Cerrar ventana">&times;</span>
-            <h3>Agregar Recordatorio</h3>
-            <input type="text" id="nuevoRecordatorio" placeholder="Observaciones">
-            <br>
-            <button id="agregarRecordatorio">Agregar recordatorio</button>
-    </div>
 
 </body>
 
