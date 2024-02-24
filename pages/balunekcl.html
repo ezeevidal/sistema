@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../style/balunekcl.css" />
+  <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escritorio</title>
+</head>
+
+<body>
+  <!--Usuarios-->
+  <div class="users">
+    <p>Inicio</p>
+    <a href="../pages/escritorio.html"><img src="../Assets/home.png" alt="" /></a>
+    <div id="cambiarUsuarioTrigger">
+      <img src="../Assets/Recurso 4.png" alt="Cambiar usuario" />
+    </div>
+    <div id="opcionesUsuario" style="display: none">
+      <div class="avatar">
+        <img src="../Assets/Recurso 4.png" alt="" />
+        <button class="opcionUsuario" data-usuario="Gerencia">
+          Gerencia
+        </button>
+      </div>
+      <div class="avatar">
+        <img src="../Assets/Recurso 4.png" alt="" />
+        <button class="opcionUsuario" data-usuario="Ventas">Ventas</button>
+      </div>
+      <div class="avatar">
+        <img src="../Assets/Recurso 4.png" alt="" />
+        <button class="opcionUsuario" data-usuario="Administracion">
+          Administración
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cambiarUsuarioTrigger = document.getElementById(
+          "cambiarUsuarioTrigger"
+        );
+        const opcionesUsuario = document.getElementById("opcionesUsuario");
+
+        cambiarUsuarioTrigger.addEventListener("click", function () {
+          opcionesUsuario.style.display =
+            opcionesUsuario.style.display === "none" ? "block" : "none";
+        });
+
+        // Manejar la selección de un nuevo usuario
+        document.querySelectorAll(".opcionUsuario").forEach((boton) => {
+          boton.addEventListener("click", function () {
+            const usuarioSeleccionado = this.getAttribute("data-usuario");
+            console.log(`Usuario seleccionado: ${usuarioSeleccionado}`);
+            // Aquí puedes añadir lógica adicional para manejar el cambio de usuario
+            // Por ejemplo, actualizar la UI o realizar una petición al servidor con el nuevo usuario
+            opcionesUsuario.style.display = "none"; // Ocultar las opciones después de seleccionar
+          });
+        });
+      });
+    </script>
+    <!--Cerrar sesion-->
+    <img src="../Assets/logout.png" alt="" title="Cerrar sesión" />
+  </div>
+
+  <div class="menu">
+    <img src="../Assets/Recurso 1.png" alt="" />
+    <div class="titulo">
+      <h1>BALUNEK CLIENTES</h1>
+    </div>
+    <div class="link">
+      <a href="./balunek.html">Presupuestos</a>
+      <a href="http://">Archivos</a>
+      <a href="http://">Contable</a>
+      <a href="http://">Estadísticas</a>
+    </div>
+  </div>
+  <!--imagen Esquina inferior derecha-->
+  <div class="icono">
+    <img src="../Assets/Recurso 2.png" alt="" />
+  </div>
+
+  <!--Fin cabecera-->
+
+  <div class="contenedor">
+    <div class="div1">
+      <h1>NOMBRE DEL CLIENTE</h1>
+    </div>
+    <div class="div2">
+      <h1>ESTADO</h1>
+      <div class="div21">
+        <img src="../Assets/Recurso 4.png" width="30px" alt="" />
+        <span>Contactado</span>
+      </div>
+    </div>
+    <div class="div3">
+      <div class="div31">
+        <span>TAREAS</span>
+        <button>Calendario</button>
+      </div>
+      <div class="div32">
+        <ul>
+          <li>Contactar cliente Marcos Reynoso <br> 24/5/2024</li>
+          <li>Contactar cliente Marcos Reynoso <br> 24/5/2024</li>
+          <li>Contactar cliente Marcos Reynoso <br> 24/5/2024</li>
+        </ul>
+      </div>
+    </div>
+    <div class="div4">
+      <div class="div41">
+        <span>NOTAS</span>
+      </div>
+      <div class="div42">
+        <ul>
+          <li>
+            <ul>
+              <li>Poner alarma al local</li>
+              <li>Cerrar con llave oficina 1</li>
+              <li>Darle de comer al perro</li>
+              <li>Poner alarma al local</li>
+              <li>Cerrar con llave oficina 1</li>
+              <li>Darle de comer al perro</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!--Seccion 2-->
+  <div class="div5">
+    <div class="div51">
+      <button><img src="../Assets/Copia de Recurso 3Acopio.png" alt="">Seguimiento</button>
+      <button><img src="../Assets/Recurso 5Acopio.png" alt="">Solicitud</button>
+      <button><img src="../Assets/Recurso 6Acopio.png" alt="">Presupuesto</button>
+      <button><img src="../Assets/Recurso 6Acopio.png" alt="">Mesada</button>
+      <button><img src="../Assets/Recurso 6Acopio.png" alt="">Equipamiento</button>
+    </div>
+    <div class="div52">
+      <span>SOLICITUD DE PRESUPUESTO</span>
+      <div class="div53">
+        <div class="div54">
+          <span>Información del cliente</span>
+        </div>
+        <div class="div55">
+          <div class="div551">
+            <div class="div552">
+              <p>Nombre y apellido:</p><input type="text" name="" id="">
+            </div>
+            <div class="div552">
+              <p>Telefono:</p><input type="tel" name="" id="">
+            </div>
+            <div class="div552">
+              <p>Email:</p><input type="email" name="" id="">
+            </div>
+          </div>
+          <div class="div551">
+            <div class="div552">
+              <p>Arquitecto:</p><input type="text" name="" id="">
+            </div>
+            <div class="div552">
+              <p>Telefono:</p><input type="tel" name="" id="">
+            </div>
+            <div class="div552">
+              <p>Email:</p><input type="email" name="" id="">
+            </div>
+          </div>
+        </div>
+        <div class="div56">
+          <div class="div561">
+            <span>Fuente de referencia</span><br>
+          </div>
+          <div class="div562">
+            <div class="div5621">
+              <input type="radio" name="fuente_referencia" id="local">
+              <label for="local">Local</label>
+            </div>
+            <div class="div5621">
+              <input type="radio" name="fuente_referencia" id="arquitecto">
+              <label for="arquitecto">Arquitecto</label>
+            </div>
+            <div class="div5621">
+              <input type="radio" name="fuente_referencia" id="publicidad_on">
+              <label for="publicidad_on">Publicidad On</label>
+            </div>
+            <div class="div5621">
+              <input type="radio" name="fuente_referencia" id="publicidad_off">
+              <label for="publicidad_off">Publicidad Off</label>
+            </div>
+            <div class="div5621">
+              <input type="radio" name="fuente_referencia" id="referido">
+              <label for="referido">Referido</label>
+            </div>
+          </div>
+          <div class="div563">
+            <div class="div5631">
+              <input type="radio" name="fuente_referencia" id="referido">
+              <label for="referido">Otro</label>
+            </div>
+            <div class="div5632">
+              <label for="referido">Observaciones:</label>
+              <input type="text" name="" id="">
+            </div>
+          </div>
+        </div>
+        <div class="div54">
+          <span>Información del proyecto</span>
+        </div>
+        <div class="div55">
+          <div class="div551">
+            <div class="div552">
+              <p>Direccion:</p><input type="text" name="" id="">
+            </div>
+            <div class="div552">
+              <p>Localidad:</p><input type="tel" name="" id="">
+            </div>
+            <div class="div552">
+              <p>Vendedor:</p><input type="email" name="" id="">
+            </div>
+          </div>
+          <div class="div5519">
+            <div class="div5629">
+              <input type="radio" name="fuente_referencia" id="referido">
+              <label for="referido">Medición:</label><input type="text" name="" id="">
+            </div>
+            <div class="div5629">
+              <input type="radio" name="fuente_referencia" id="referido">
+              <label for="referido">Acopio:</label><input type="text" name="" id="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
