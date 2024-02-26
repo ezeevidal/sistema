@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="../style/balunekcl.css" />
   <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datepicker/dist/datepicker.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escritorio</title>
 </head>
@@ -230,10 +231,230 @@
             </div>
           </div>
         </div>
+
+
+        <!--Seccion Amoblamientos-->
+
+        <div class="div54">
+          <span>Amoblamientos</span>
+        </div>
+        <div class="div57">
+          <button id="open-popup-btn"><img src="../Assets/Recurso 21.png" alt="">Agregar amoblamiento</button>
+          <input type="search" placeholder="Buscar...">
+        </div>
+        <!-- Popup -->
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <span id="close-popup" class="close-btn">&times;</span>
+            <span style="font-size: large;"><strong>Elegí tu amoblamiento</strong></span>
+            <ul class="popup-list">
+              <li>Cocina</li>
+              <li>Lavadero</li>
+              <li>Vestidor Principal</li>
+              <li>Placard Bauti</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Lista de elementos seleccionados -->
+        <div class="div58">
+          <ul id="selected-list" class="selected-list">
+            <!-- Aquí se agregarán los elementos seleccionados -->
+          </ul>
+        </div>
+
+        <!--Fin seccion Amoblamientos-->
+
+
+
+        <!-- Seccion archivos -->
+        <div class="div54">
+          <span>Planos | Diseños cliente</span>
+        </div>
+        <div class="div57">
+          <button id="open-popup-btn-archivos"><img src="../Assets/Recurso 21.png" alt="">Agregar archivos</button>
+          <input type="search" placeholder="Buscar...">
+        </div>
+        <!-- Popup -->
+        <div id="popup-archivos" class="popup">
+          <div class="popup-content">
+            <span id="close-popup-archivos" class="close-btn">&times;</span>
+            <span style="font-size: large;"><strong>Agregar archivos</strong></span>
+            <input type="file" id="file-input" multiple>
+            <button id="add-files-btn">Agregar archivos</button>
+          </div>
+        </div>
+        <!-- Lista de archivos seleccionados -->
+        <div class="div58">
+          <ul id="selected-files-list" class="selected-list">
+            <!-- Aquí se agregarán los archivos seleccionados -->
+          </ul>
+        </div>
+        <!-- Fin seccion archivos -->
+
+
+
+
+
+        
+
+        <!--Calendario de recordatorios-->
+
+
+        <!--Fin calendario de recordatorios-->
+
+
+
+
+
       </div>
     </div>
   </div>
   </div>
+
+
+
+
+  <script>
+
+//Calendario de recordatorio!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Popup amoblamientos
+    // Mostrar popup
+    document.getElementById('open-popup-btn').addEventListener('click', function () {
+      document.getElementById('popup').style.display = 'flex';
+    });
+
+    // Cerrar popup
+    document.getElementById('close-popup').addEventListener('click', function () {
+      document.getElementById('popup').style.display = 'none';
+    });
+
+    // Agregar elementos al hacer clic en ellos en el popup
+    document.querySelectorAll('.popup-list li').forEach(function (item) {
+      item.addEventListener('click', function () {
+        // Crear un nuevo elemento de lista
+        var newItem = document.createElement('li');
+        newItem.classList.add('selected-list-item');
+        newItem.textContent = this.textContent;
+
+        // Crear ícono de basura
+        var trashIcon = document.createElement('span');
+        trashIcon.classList.add('trash-icon');
+        trashIcon.innerHTML = '🗑'; // Usa un ícono real o una imagen si es necesario
+        trashIcon.addEventListener('click', function () {
+          newItem.remove();
+        });
+
+        // Agregar el texto y el ícono de basura al nuevo elemento
+        newItem.appendChild(trashIcon);
+
+        // Agregar el nuevo elemento a la lista de seleccionados
+        document.getElementById('selected-list').appendChild(newItem);
+
+        // Cerrar el popup
+        document.getElementById('popup').style.display = 'none';
+      });
+    });
+
+
+
+
+
+
+
+
+
+
+
+//Popup de archivos!
+
+// Mostrar popup de archivos
+document.getElementById('open-popup-btn-archivos').addEventListener('click', function () {
+  document.getElementById('popup-archivos').style.display = 'flex';
+});
+
+// Cerrar popup de archivos
+document.getElementById('close-popup-archivos').addEventListener('click', function () {
+  document.getElementById('popup-archivos').style.display = 'none';
+});
+
+// Agregar archivos al hacer clic en el botón
+document.getElementById('add-files-btn').addEventListener('click', function () {
+  var fileInput = document.getElementById('file-input');
+  var files = fileInput.files;
+
+  // Iterar sobre los archivos seleccionados
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+
+    // Crear un nuevo elemento de lista para cada archivo
+    var newItem = document.createElement('li');
+    newItem.classList.add('selected-list-item');
+    newItem.textContent = file.name;
+
+    // Crear el botón de acción para descargar el archivo
+    var downloadButton = document.createElement('img');
+    downloadButton.src = '../assets/descarga.png'; // Ruta de la imagen de descarga
+    downloadButton.alt = 'Descargar'; // Texto alternativo para la imagen de descarga
+    downloadButton.classList.add('action-button');
+
+    // Establecer el tamaño del botón de descarga
+    downloadButton.style.width = '20px'; // Ajusta el ancho según sea necesario
+    downloadButton.style.height = '20px'; // Ajusta la altura según sea necesario
+
+    // Añadir evento para descargar el archivo
+    (function (file) {
+      downloadButton.addEventListener('click', function () {
+        var downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(file);
+        downloadLink.download = file.name;
+        downloadLink.click();
+      });
+    })(file);
+
+    // Crear el botón de acción para eliminar el archivo
+    var trashIcon = document.createElement('img');
+    trashIcon.src = '../assets/carga.png'; // Ruta de la imagen de borrar
+    trashIcon.alt = 'Eliminar'; // Texto alternativo para la imagen de borrar
+    trashIcon.classList.add('action-button');
+
+    // Establecer el tamaño del icono de eliminar
+    trashIcon.style.width = '20px'; // Ajusta el ancho según sea necesario
+    trashIcon.style.height = '20px'; // Ajusta la altura según sea necesario
+
+    // Añadir evento para eliminar el archivo
+    trashIcon.addEventListener('click', function () {
+      newItem.remove();
+    });
+
+    // Agregar los botones al elemento de la lista
+    newItem.appendChild(downloadButton);
+    newItem.appendChild(trashIcon);
+
+    // Agregar el nuevo elemento a la lista de archivos seleccionados
+    document.getElementById('selected-files-list').appendChild(newItem);
+  }
+
+  // Limpiar el valor del input de archivo
+  fileInput.value = '';
+
+  // Cerrar el popup de archivos
+  document.getElementById('popup-archivos').style.display = 'none';
+});
+  </script>
 </body>
 
 </html>
