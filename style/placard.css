@@ -1,0 +1,151 @@
+body {
+    background-color: rgb(55, 55, 55);
+    margin: 50px;
+    padding: 30px;
+    border: 2px solid grey;
+    border-radius: 30px;
+    align-items: center;
+}
+h4{
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 400;
+    color: white;
+    margin-left: 30px;
+}
+.div1{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 100px;
+}
+.div1 h2{
+    font-size: 20px;
+    font-family: montserrat;
+    font-weight: 500;
+    color: white;
+    margin: 30px;
+}
+.div1 h3{
+    font-size: 20px;
+    font-family: montserrat;
+    font-weight: 500;
+    color: white;
+    margin: 30px;
+}
+.div1 h2 input{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid grey;
+    margin-left: 10px;
+    width: 300px;
+    color: white;
+    font-family: montserrat;
+    font-size: small;
+}
+.div1 input:focus{
+    outline: none;
+}
+.div1 hr{
+    width: 500px;
+    color: grey;
+    border: none;
+    border-bottom: 1px solid;
+    margin: 0px 30px;
+}   
+.div2{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.div2 h4{
+    font-size: 18px;
+    font-family: montserrat;
+    font-weight: 300;
+    color: white;
+    margin: 30px;
+    margin-left: 10px;
+}
+.div21{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.div21 input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px; 
+    height: 20px;
+    border: 1px solid grey; 
+    border-radius: 50%; 
+    outline: none; 
+    background-color: transparent; 
+    cursor: pointer; 
+  }
+  
+  .div21 input[type="radio"]:checked {
+    background-color: #009607;
+    border-color: #009607;
+  }
+
+  .div21 input{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid grey;
+    margin-left: 10px;
+    width: 300px;
+    color: white;
+    font-family: montserrat;
+    font-size: small;
+  }
+.div21 input:focus{
+  outline: none;
+}
+.div3{
+    width: 100%;
+}
+.div3 textarea{
+    width: 97%;
+    height: 500px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-size: medium;  
+    font-family: montserrat;
+    font-weight: 300;
+    color: white;
+    padding: 30px;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+.div3 input:focus{
+    outline: none;
+    text-decoration: underline;
+}
+.boton{ 
+    text-align: center;
+}
+.boton button{
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    margin: 50px;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid grey;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    font-family: montserrat;
+    font-weight: 500;
+}
+
+.boton button:hover{
+    background-color: grey;
+    border: 2px solid white;
+    cursor: pointer;
+}
