@@ -4,6 +4,7 @@ body {
     padding: 30px;
     border: 2px solid grey;
     border-radius: 30px;
+    align-items: center;
 }
 h4{
     font-size: medium;
@@ -103,4 +104,48 @@ h4{
   }
 .div21 input:focus{
   outline: none;
+}
+.div3{
+    width: 100%;
+}
+.div3 textarea{
+    width: 97%;
+    height: 500px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-size: medium;  
+    font-family: montserrat;
+    font-weight: 300;
+    color: white;
+    padding: 30px;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+.div3 input:focus{
+    outline: none;
+    text-decoration: underline;
+}
+.boton{ 
+    text-align: center;
+}
+.boton button{
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    margin: 50px;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid grey;
+    border-radius: 30px;
+    color: white;
+    font-size: 20px;
+    font-family: montserrat;
+    font-weight: 500;
+}
+
+.boton button:hover{
+    background-color: grey;
+    border: 2px solid white;
+    cursor: pointer;
 }
