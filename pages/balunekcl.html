@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="../style/balunekcl.css" />
   <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datepicker/dist/datepicker.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datepicker/dist/datepicker.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escritorio</title>
 </head>
@@ -295,7 +295,7 @@
 
 
 
-        
+
 
         <!--Calendario de recordatorios-->
 
@@ -312,11 +312,9 @@
   </div>
 
 
-
-
   <script>
 
-//Calendario de recordatorio!
+    //Calendario de recordatorio!
 
 
 
@@ -331,7 +329,7 @@
 
 
 
-//Popup amoblamientos
+    //Popup amoblamientos
     // Mostrar popup
     document.getElementById('open-popup-btn').addEventListener('click', function () {
       document.getElementById('popup').style.display = 'flex';
@@ -377,83 +375,81 @@
 
 
 
+    //Popup de archivos!
 
-
-//Popup de archivos!
-
-// Mostrar popup de archivos
-document.getElementById('open-popup-btn-archivos').addEventListener('click', function () {
-  document.getElementById('popup-archivos').style.display = 'flex';
-});
-
-// Cerrar popup de archivos
-document.getElementById('close-popup-archivos').addEventListener('click', function () {
-  document.getElementById('popup-archivos').style.display = 'none';
-});
-
-// Agregar archivos al hacer clic en el botón
-document.getElementById('add-files-btn').addEventListener('click', function () {
-  var fileInput = document.getElementById('file-input');
-  var files = fileInput.files;
-
-  // Iterar sobre los archivos seleccionados
-  for (var i = 0; i < files.length; i++) {
-    var file = files[i];
-
-    // Crear un nuevo elemento de lista para cada archivo
-    var newItem = document.createElement('li');
-    newItem.classList.add('selected-list-item');
-    newItem.textContent = file.name;
-
-    // Crear el botón de acción para descargar el archivo
-    var downloadButton = document.createElement('img');
-    downloadButton.src = '../assets/descarga.png'; // Ruta de la imagen de descarga
-    downloadButton.alt = 'Descargar'; // Texto alternativo para la imagen de descarga
-    downloadButton.classList.add('action-button');
-
-    // Establecer el tamaño del botón de descarga
-    downloadButton.style.width = '20px'; // Ajusta el ancho según sea necesario
-    downloadButton.style.height = '20px'; // Ajusta la altura según sea necesario
-
-    // Añadir evento para descargar el archivo
-    (function (file) {
-      downloadButton.addEventListener('click', function () {
-        var downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(file);
-        downloadLink.download = file.name;
-        downloadLink.click();
-      });
-    })(file);
-
-    // Crear el botón de acción para eliminar el archivo
-    var trashIcon = document.createElement('img');
-    trashIcon.src = '../assets/carga.png'; // Ruta de la imagen de borrar
-    trashIcon.alt = 'Eliminar'; // Texto alternativo para la imagen de borrar
-    trashIcon.classList.add('action-button');
-
-    // Establecer el tamaño del icono de eliminar
-    trashIcon.style.width = '20px'; // Ajusta el ancho según sea necesario
-    trashIcon.style.height = '20px'; // Ajusta la altura según sea necesario
-
-    // Añadir evento para eliminar el archivo
-    trashIcon.addEventListener('click', function () {
-      newItem.remove();
+    // Mostrar popup de archivos
+    document.getElementById('open-popup-btn-archivos').addEventListener('click', function () {
+      document.getElementById('popup-archivos').style.display = 'flex';
     });
 
-    // Agregar los botones al elemento de la lista
-    newItem.appendChild(downloadButton);
-    newItem.appendChild(trashIcon);
+    // Cerrar popup de archivos
+    document.getElementById('close-popup-archivos').addEventListener('click', function () {
+      document.getElementById('popup-archivos').style.display = 'none';
+    });
 
-    // Agregar el nuevo elemento a la lista de archivos seleccionados
-    document.getElementById('selected-files-list').appendChild(newItem);
-  }
+    // Agregar archivos al hacer clic en el botón
+    document.getElementById('add-files-btn').addEventListener('click', function () {
+      var fileInput = document.getElementById('file-input');
+      var files = fileInput.files;
 
-  // Limpiar el valor del input de archivo
-  fileInput.value = '';
+      // Iterar sobre los archivos seleccionados
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
 
-  // Cerrar el popup de archivos
-  document.getElementById('popup-archivos').style.display = 'none';
-});
+        // Crear un nuevo elemento de lista para cada archivo
+        var newItem = document.createElement('li');
+        newItem.classList.add('selected-list-item');
+        newItem.textContent = file.name;
+
+        // Crear el botón de acción para descargar el archivo
+        var downloadButton = document.createElement('img');
+        downloadButton.src = '../assets/descarga.png'; // Ruta de la imagen de descarga
+        downloadButton.alt = 'Descargar'; // Texto alternativo para la imagen de descarga
+        downloadButton.classList.add('action-button');
+
+        // Establecer el tamaño del botón de descarga
+        downloadButton.style.width = '20px'; // Ajusta el ancho según sea necesario
+        downloadButton.style.height = '20px'; // Ajusta la altura según sea necesario
+
+        // Añadir evento para descargar el archivo
+        (function (file) {
+          downloadButton.addEventListener('click', function () {
+            var downloadLink = document.createElement('a');
+            downloadLink.href = URL.createObjectURL(file);
+            downloadLink.download = file.name;
+            downloadLink.click();
+          });
+        })(file);
+
+        // Crear el botón de acción para eliminar el archivo
+        var trashIcon = document.createElement('img');
+        trashIcon.src = '../assets/carga.png'; // Ruta de la imagen de borrar
+        trashIcon.alt = 'Eliminar'; // Texto alternativo para la imagen de borrar
+        trashIcon.classList.add('action-button');
+
+        // Establecer el tamaño del icono de eliminar
+        trashIcon.style.width = '20px'; // Ajusta el ancho según sea necesario
+        trashIcon.style.height = '20px'; // Ajusta la altura según sea necesario
+
+        // Añadir evento para eliminar el archivo
+        trashIcon.addEventListener('click', function () {
+          newItem.remove();
+        });
+
+        // Agregar los botones al elemento de la lista
+        newItem.appendChild(downloadButton);
+        newItem.appendChild(trashIcon);
+
+        // Agregar el nuevo elemento a la lista de archivos seleccionados
+        document.getElementById('selected-files-list').appendChild(newItem);
+      }
+
+      // Limpiar el valor del input de archivo
+      fileInput.value = '';
+
+      // Cerrar el popup de archivos
+      document.getElementById('popup-archivos').style.display = 'none';
+    });
   </script>
 </body>
 
