@@ -7,7 +7,7 @@ body {
     align-items: center;
 }
 h4{
-    font-size: medium;
+    font-size: 12px;
     font-family: montserrat;
     font-weight: 400;
     color: white;
@@ -67,11 +67,20 @@ h4{
     margin-left: 10px;
 }
 .div21{
+    margin-left: 50px;
     display: flex;
-    width: 20%;
-    justify-content: center;
+    width: 15%;
+    justify-content: left;
     flex-direction: row;
     align-items: center;
+}
+
+.div21 h4{
+    font-size: 10px;
+    font-family: montserrat;
+    font-weight: 400;
+    color: white;
+    margin-left: 30px;
 }
 
 .div21 input[type="radio"] {
