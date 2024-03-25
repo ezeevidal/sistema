@@ -5,6 +5,10 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="../style/presupuesto.css" />
   <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datepicker/dist/datepicker.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escritorio</title>
@@ -91,8 +95,8 @@
     <div class="div2">
       <h1>ESTADO</h1>
       <div class="div21">
-        <img src="../Assets/Recurso 4.png" width="30px" alt="" />
-        <span>Contactado</span>
+        <img src="../Assets/SVG/Recurso 1.svg" width="30px" alt="" />
+        <span>Cotizado</span>
       </div>
     </div>
     <div class="div3">
@@ -134,29 +138,41 @@
     <div class="div51">
       <button><img src="../Assets/Copia de Recurso 3Acopio.png" alt="">Seguimiento</button>
       <button><img src="../Assets/Recurso 5Acopio.png" alt="">Solicitud</button>
-      <button><img src="../Assets/Recurso 6Acopio.png" alt="">Presupuesto</button>
+      <button><img src="../Assets/Recurso 5Acopio.png" alt="">Presupuesto</button>
       <button><img src="../Assets/Recurso 6Acopio.png" alt="">Mesada</button>
       <button><img src="../Assets/Recurso 6Acopio.png" alt="">Equipamiento</button>
     </div>
+
+
+
+
+
+
     <div class="div52">
       <span>PRESUPUESTOS</span>
 
 
 
       <!--FOCUS ARMARIUS-->
+      <!-- Primer interruptor -->
+
       <input type="radio" name="interruptor" id="prendido">
       <input type="radio" name="interruptor" id="apagado" checked>
-    
+
       <div class="interruptor-cuerpo">
-          <div class="interruptor-tecla">
-              <label for="prendido" title="Desactivado">___</label>
-              <label for="apagado" title="Activado">___</label>
-          </div>		
+        <div class="interruptor-tecla">
+          <label for="prendido" title="Desactivado">___</label>
+          <label for="apagado" title="Activado">___</label>
+        </div>
       </div>
-    
-      
+
+
       <div class="div54">
-        <span style="display: flex;"><div style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">1</div>Focus + Armarius</span>
+        <span style="display: flex;">
+          <div
+            style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">
+            1</div>Focus + Armarius
+        </span>
         <hr>
       </div>
 
@@ -169,9 +185,9 @@
       <div id="popup-archivos" class="popup">
         <div class="popup-content">
           <span id="close-popup-archivos" class="close-btn">&times;</span>
-          <span style="font-size: large;"><strong>Agregar archivos</strong></span>
+          <span style="font-size: large;" class="popup-title"><strong>Seleccionar archivos</strong></span> <br><br><br>
           <input type="file" id="file-input" multiple>
-          <button id="add-files-btn">Agregar archivos</button>
+          <button id="add-files-btn" class="popup-btn">Agregar archivos</button>
         </div>
       </div>
       <!-- Lista de archivos seleccionados -->
@@ -190,18 +206,24 @@
 
       <!--EDITABLES-->
       <!-- Seccion archivos -->
-      <input type="radio" name="interruptor" id="prendido">
-      <input type="radio" name="interruptor" id="apagado" checked>
-    
-      <div class="interruptor-cuerpo">
-          <div class="interruptor-tecla">
-              <label for="prendido" title="Desactivado">___</label>
-              <label for="apagado" title="Activado">___</label>
-          </div>		
-      </div>    
-      
+      <div>
+        <input type="radio" name="botondos" id="on">
+        <input type="radio" name="botondos" id="off" checked>
+
+        <div class="cuerpobotondos">
+          <div class="teclabotondos">
+            <label for="on" title="Desactivado">___</label>
+            <label for="off" title="Activado">___</label>
+          </div>
+        </div>
+      </div>
+
       <div class="div54">
-        <span style="display: flex;"><div style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">2</div>Editables</span>
+        <span style="display: flex;">
+          <div
+            style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">
+            2</div>Editables
+        </span>
         <hr>
       </div>
       <div class="div57">
@@ -234,17 +256,25 @@
 
       <!--PRESUPUESTOS-->
       <!-- Seccion archivos -->
-      <input type="radio" name="interruptor" id="prendido">
-      <input type="radio" name="interruptor" id="apagado" checked>
-    
-      <div class="interruptor-cuerpo">
-          <div class="interruptor-tecla">
-              <label for="prendido" title="Desactivado">___</label>
-              <label for="apagado" title="Activado">___</label>
-          </div>		
+      <div>
+        <!-- Primer juego de botones de radio -->
+        <input type="radio" name="botondos1" id="on1">
+        <input type="radio" name="botondos1" id="off1" checked>
+
+        <div class="cuerpobotondos1">
+          <div class="teclabotondos1">
+            <label for="on1" title="Desactivado">___</label>
+            <label for="off1" title="Activado">___</label>
+          </div>
+        </div>
       </div>
+
       <div class="div54">
-        <span style="display: flex;"><div style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">3</div>Presupuestos</span>
+        <span style="display: flex;">
+          <div
+            style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">
+            3</div>Presupuestos
+        </span>
         <hr>
       </div>
       <div class="div57">
@@ -267,12 +297,103 @@
         </ul>
       </div>
       <!-- Fin seccion archivos -->
-
       <!--FIN PRESUPUESTOS-->
+
+
+
+
+
+
+
+
+
+
+      
+      <!--CONTACTO-->
+      <!-- Cuarto interruptor -->
+
+      <input type="radio" name="nuevo-interruptor" id="nuevo-prendido">
+      <input type="radio" name="nuevo-interruptor" id="nuevo-apagado" checked>
+
+      <div class="nuevo-interruptor-cuerpo">
+        <div class="nuevo-interruptor-tecla">
+          <label for="nuevo-prendido" title="Desactivado">___</label>
+          <label for="nuevo-apagado" title="Activado">___</label>
+        </div>
+      </div>
+
+
+      <!-- Cuarto cuerpo -->
+      <div class="div54">
+        <span style="display: flex;">
+          <div
+            style="border: 3px solid grey;border-radius: 50%;font-size: 10px; width: 20px;height: auto;align-items: center;display: flex;justify-content: center;margin-right: 10px;background-color: grey;">
+            4</div>Contacto
+        </span>
+        <hr>
+      </div>
+
+      <div class="contactoinput">
+        <h2>Solicitud de presupuesto por WhatsApp</h2>
+        <textarea name="" id="" cols="140" rows="3" placeholder="Texto:"></textarea>
+        <br><br>
+        <button><img src="../Assets/descarga.png" alt="">Espacio In</button>
+        <br><br><br>
+        <h2>Envío de presupuesto:</h2>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+      </div>
+      <br><br><br><br><br>
+      <br><br><br><br><br>
+
+
+      <div class="contactoinput">
+        <h2>Recordatorio a 7 días: Consulta</h2>
+        <div class="calendarioo" id="calendar">
+          <button>Calendario</button>&nbsp;&nbsp;&nbsp;&nbsp; <h2> > 00/00/2024 </h2> <!-- Abrir calendario y mostrar fecha elegida-->
+        </div>
+        <br><br>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+        <br><br>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+      </div>
+
+      <br><br><br><br><br>
+
+
+      <div class="contactoinput">
+        <h2>Recordatorio a 30 días: Consulta</h2>
+        <div class="calendarioo" id="calendar">
+          <button>Calendario</button>&nbsp;&nbsp;&nbsp;&nbsp; <h2> > 00/00/2024 </h2> <!-- Abrir calendario y mostrar fecha elegida-->
+        </div>
+        <br><br>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+        <br><br>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+      </div>
+
+      <br><br><br><br><br>
+      <div class="contactoinput">
+        <h2>Recordatorio a x días dependiendo el estado de la obra: Consulta</h2>
+        <div class="calendarioo" id="calendar">
+          <button>Calendario</button>&nbsp;&nbsp;&nbsp;&nbsp; <h2> > 00/00/2024 </h2> <!-- Abrir calendario y mostrar fecha elegida-->
+        </div>
+        <br><br>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+        <br><br>
+        <textarea name="" id="" cols="140" rows="1" placeholder="Texto:"></textarea>
+      </div>
+
+      <br><br><br><br><br>
+
+
+
+
 
 
     </div>
   </div>
+
+
 
 
 
@@ -416,7 +537,10 @@
 
         // Añadir evento para eliminar el archivo
         trashIcon.addEventListener('click', function () {
-          newItem.remove();
+          // Obtener el elemento padre del ícono de basura (que sería el elemento <li> que contiene el ícono)
+          var listItem = this.parentNode;
+          // Eliminar el elemento <li> de la lista
+          listItem.remove();
         });
 
         // Agregar los botones al elemento de la lista
@@ -432,7 +556,17 @@
 
       // Cerrar el popup de archivos
       document.getElementById('popup-archivos').style.display = 'none';
+      $(function () {
+        // Inicializar Datepicker en el elemento con id "calendar"
+        $("#calendar").datepicker();
+
+        // Abrir el Datepicker al hacer clic en el botón con clase "calendarioo"
+        $(".calendarioo").on("click", function () {
+          $("#calendar").datepicker("show");
+        });
+      });
     });
+
   </script>
 
 
