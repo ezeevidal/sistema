@@ -268,7 +268,7 @@ body {
     margin: 10px;
   }
   .div21 img {
-    width: 50px;
+    width: 30px;
     height: auto;
     margin: 10px;
   }
@@ -465,8 +465,8 @@ body {
     font-size: 12px;
     font-family: montserrat;
     font-weight: 300;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-top: 30px;
     cursor: pointer;
   }
@@ -1228,4 +1228,129 @@ input[name=nuevo-interruptor] {
 }
 .calendarioo button{
 margin-bottom: 22px;
+}
+
+
+/*Interruptor*/
+
+
+/* Nuevo Estilo de Interruptor */
+
+input[name=interruptorNuevo]{
+  display: none;
+}
+
+label{
+    color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.cuerpoInterruptorNuevo{
+    margin-left: 1015px;
+    margin-bottom: -50px;
+    width: 40px;
+    height: 22px;
+    box-shadow: 0px 0px 5px #8A8A8A inset;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color .25s;
+}
+
+.cuerpoInterruptorNuevo label img{
+    width: 10px;
+}
+
+.teclaInterruptorNuevo{
+    position: relative;
+    left:0;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 2px #8A8A8A;
+    background-color: white;
+    border-radius: 50%;
+    transition: left .25s;
+}
+
+#interruptorApagado:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo{
+    left:0px;
+}
+
+#interruptorApagado:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo label[for=interruptorApagado]{
+    display: none
+}
+
+#interruptorPrendido:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo{
+    left:20px;
+}
+
+#interruptorPrendido:checked ~ .cuerpoInterruptorNuevo{
+    background-color: #A2DA6C;
+}
+
+#interruptorPrendido:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo label[for=interruptorPrendido]{
+    display: none
+}
+
+
+.div58{
+
+  margin-bottom: 100px;
+}
+
+.div58 h2{
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 500;
+  color: white;
+  margin: 30px;
+}
+.div58 p{
+  font-size: 16px;
+  font-family: montserrat;
+  font-weight: 300;
+  color: white;
+  margin: 30px;
+}
+.div58 textarea{
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 30px;
+  font-size: medium;  
+  font-family: montserrat;
+  font-weight: 300;
+  color: white;
+  padding: 30px;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+.div581 button{
+  border: 1px solid grey;
+  border-radius: 12px;
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 300;
+  background-color: grey;
+  color: white;
+  padding: 6px 30px;
+}
+
+.div581 {
+  display: flex;
+  align-items: center;
+}
+.calendariooo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.calendariooo button{
+background-color: transparent;
+border-radius: 50px;
+}
+.calendariooo h2{
+  font-size: x-large;
+  font-family: montserrat;
+  font-weight: 200;
 }
