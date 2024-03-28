@@ -1,0 +1,1356 @@
+body {
+    background-color: rgb(55, 55, 55);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .icono {
+    position: flex;
+  }
+  
+  .icono img {
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Contenido */
+  .users {
+    margin: 10px;
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 85%;
+  }
+  .titulo {
+    width: 90%;
+    display: flex;
+    padding: 50px;
+  }
+  .titulo h1 {
+    justify-content: center;
+    margin: 0 auto;
+  
+    color: grey;
+    font-weight: 400;
+    font-size: x-large;
+    font-family: montserrat;
+    text-align: center;
+  }
+  .users p {
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 200;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .users img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .users img:hover {
+    cursor: pointer;
+  }
+  
+  .menu {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 99;
+    margin: 0 auto;
+  }
+  
+  .menu img {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .link {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .link a {
+    border: 1px solid grey;
+    background: grey;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 200;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .link a:hover {
+    cursor: pointer;
+    scale: 1.01;
+  }
+  
+  #popupUsuario {
+    display: flex;
+    flex-direction: column;
+    display: none;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(55, 55, 55);
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 100vh rgba(0, 0, 0, 0.6);
+    z-index: 100;
+  }
+  
+  #popupUsuario h2 {
+    color: white;
+    font-size: medium;
+    font-weight: 300;
+    font-family: montserrat;
+    margin-bottom: 10px;
+  }
+  
+  #popupUsuario input {
+    width: 90%;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 100;
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 1px;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  
+  #popupUsuario button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: small;
+    font-family: montserrat;
+    font-weight: 200;
+    background-color: transparent;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 30px;
+  }
+  
+  #popupUsuario button:hover {
+    background-color: grey;
+    cursor: pointer;
+  }
+  
+  #popupUsuario button:focus {
+    background-color: green;
+    border: 1px solid green;
+    font-weight: 400;
+  }
+  
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #opcionesUsuario {
+    top: 55px;
+    position: absolute;
+    z-index: 10;
+    background-color: rgb(55, 55, 55);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 180px;
+  }
+  
+  .opcionUsuario {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    font-family: montserrat;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .opcionUsuario:hover {
+    scale: 1.1;
+    font-weight: 400;
+  }
+  
+  /*FIN CABECERA*/
+  .contenedor {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    margin: 50px auto;
+    height: 200px;
+  }
+  .div1 {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+  }
+  .div1 h1 {
+    width: 50%;
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid grey;
+  }
+  .div2 {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    position: relative; /* Agregamos posición relativa para que el pseudo-elemento pueda posicionarse correctamente */
+  }
+  
+  .div2::before {
+    content: ""; /* Agrega un contenido al pseudo-elemento */
+    position: absolute; /* Lo posicionamos absolutamente dentro de .div3 */
+    top: 50%; /* Lo colocamos en la mitad del contenedor */
+    right: 0; /* Lo colocamos en el borde derecho del contenedor */
+    transform: translateY(-50%); /* Centramos verticalmente el pseudo-elemento */
+    height: 150px; /* Altura del borde */
+    border-right: 1px solid grey; /* Estilo del borde derecho */
+  }
+  .div2 h1 {
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+  }
+  .div21 {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+  }
+  .div21 img {
+    width: 30px;
+    height: auto;
+    margin: 10px;
+  }
+  .div21 span {
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    margin-left: -80px;
+  }
+  .div3 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    position: relative; /* Agregamos posición relativa para que el pseudo-elemento pueda posicionarse correctamente */
+  }
+  
+  .div3::before {
+    content: ""; /* Agrega un contenido al pseudo-elemento */
+    position: absolute; /* Lo posicionamos absolutamente dentro de .div3 */
+    top: 50%; /* Lo colocamos en la mitad del contenedor */
+    right: 0; /* Lo colocamos en el borde derecho del contenedor */
+    transform: translateY(-50%); /* Centramos verticalmente el pseudo-elemento */
+    height: 150px; /* Altura del borde */
+    border-right: 1px solid grey; /* Estilo del borde derecho */
+  }
+  .div31 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+  .div31 span {
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+  }
+  .div31 button {
+    border: 1px solid grey;
+    border-radius: 12px;
+    font-size: 13px;
+    font-family: montserrat;
+    font-weight: 300;
+    background-color: grey;
+    color: white;
+    padding: 6px 30px;
+  }
+  .div31 button:hover {
+    cursor: pointer;
+  }
+  .div32 {
+    padding: 20px;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: auto;
+    max-height: 130px;
+  }
+  .div32 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  .div32 ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 300;
+    color: white;
+  }
+  
+  /* Estilos para personalizar el scroll */
+  .div32::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+  }
+  
+  .div32::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del fondo del scrollbar */
+  }
+  
+  .div32::-webkit-scrollbar-thumb {
+    background: #888; /* Color del scrollbar */
+  }
+  
+  .div32::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del scrollbar al pasar el cursor sobre él */
+  }
+  .div4 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+  }
+  .div41 {
+    height: 10%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+  .div41 span {
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+  }
+  .div42 {
+    height: 90%;
+    width: 100%;
+    overflow: auto;
+    max-height: 160px;
+    margin-top: 20px;
+  }
+  .div42 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .div42 ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 300;
+    color: white;
+  }
+  /* Estilos para personalizar el scroll */
+  .div42::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+  }
+  
+  .div42::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del fondo del scrollbar */
+  }
+  
+  .div42::-webkit-scrollbar-thumb {
+    background: #888; /* Color del scrollbar */
+  }
+  
+  .div42::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del scrollbar al pasar el cursor sobre él */
+  }
+  
+  /*FIN SECCION 1*/
+  
+  /*SECCION 2*/
+  .div5 {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  .div51 {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .div51 button {
+    width: 200px;
+    height: 30px;
+    background-color: #575756;
+    border: 1px solid #575756;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-family: montserrat;
+    font-weight: 300;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  .div51 button img {
+    width: 20px;
+  }
+  .div52 {
+    width: 75%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+  .div52 span {
+    font-size: 14px;
+    font-family: montserrat;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+  }
+  .div53 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+  }
+  .div54{
+      width: 100%;
+      height: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+  }
+  .div54 span{
+      font-size: 20px;
+      font-family: montserrat;
+      font-weight: 300px;
+      color: white;
+  }
+  .div541 button {
+    width: 300px;
+    height: 40px;
+    background-color: #575756;
+    border: 1px solid #575756;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-family: montserrat;
+    font-weight: 400;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    margin-left: 745px;
+    margin-bottom: -50px;
+  }
+  .div541 button img {
+    width: 15px;
+  }
+  .div541 button:hover{
+    cursor: pointer;
+  }
+  .div55 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      column-gap: 150px;
+  }
+    
+    .div551 {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+    .div552{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .div552 p{
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      margin-right: 10px;
+      align-items: flex-end;
+    }
+    .div552 input{
+      background-color: transparent;
+      border-bottom: 1px dashed white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      width: 60%;
+    }
+    .div552 input:focus{
+      outline: none;
+    }
+    .div56{
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+    }
+    .div561{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .div561 span{
+      font-size: 20px;
+      font-family: montserrat;
+      font-weight: 300px;
+      color: white;
+      margin-right: 10px;
+      align-items: flex-end;
+    }
+    .div562 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .div5621 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .div562 input[type="radio"] {
+      -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+      -moz-appearance: none;
+      appearance: none;
+      width: 20px; /* Ajusta el tamaño según sea necesario */
+      height: 20px; /* Ajusta el tamaño según sea necesario */
+      border: 1px solid grey; /* Establece el borde de 1px color grey */
+      border-radius: 50%; /* Hace que el radio button tenga forma circular */
+      outline: none; /* Elimina el contorno al enfocar */
+      background-color: transparent; 
+      cursor: pointer; 
+    }
+    
+    .div562 input[type="radio"]:checked {
+      background-color: #009607;
+      border-color: #009607;
+    }
+    
+    .div5621 label{
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      margin-left: 10px;
+    }
+    .div563 {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .div563 input[type="radio"] {
+      -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+      -moz-appearance: none;
+      appearance: none;
+      width: 20px; /* Ajusta el tamaño según sea necesario */
+      height: 20px; /* Ajusta el tamaño según sea necesario */
+      border: 1px solid grey; /* Establece el borde de 1px color grey */
+      border-radius: 50%; /* Hace que el radio button tenga forma circular */
+      outline: none; /* Elimina el contorno al enfocar */
+      background-color: transparent; 
+      cursor: pointer; 
+    }
+    
+    .div563 input[type="radio"]:checked {
+      background-color: #009607;
+      border-color: #009607;
+    }
+    .div5631{
+      display: flex;
+      flex-direction: row;
+      width: 220px;
+      justify-content: flex-start;
+      margin-top: 30px;
+    }
+    .div5631 label{
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      margin-left: 10px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+    .div5631 input{
+      background-color: transparent;
+      border-bottom: 1px dashed white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      width: 100%;
+    }
+    .div5631 input:focus{
+      outline: none;
+    } 
+    .div5632{
+      display: flex;
+      flex-direction: row;
+      width: 1700px;
+      justify-content: flex-start;
+      margin-top: 30px;
+    }
+    .div5632 label{
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      margin-left: 10px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      margin-right: 10px;
+    }
+    .div5632 input{
+      background-color: transparent;
+      border-bottom: 1px dashed white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      width: 100%;
+    }
+    .div5632 input:focus{
+      outline: none;
+    } 
+    .div5519{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .div5629{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .div5629 input[type="radio"]{
+      -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+      -moz-appearance: none;
+      appearance: none;
+      width: 20px; /* Ajusta el tamaño según sea necesario */
+      height: 20px; /* Ajusta el tamaño según sea necesario */
+      border: 1px solid grey; /* Establece el borde de 1px color grey */
+      border-radius: 50%; /* Hace que el radio button tenga forma circular */
+      outline: none; /* Elimina el contorno al enfocar */
+      background-color: transparent; 
+      cursor: pointer; 
+    }
+    
+    .div5629 input[type="radio"]:checked {
+      background-color: #009607;
+      border-color: #009607;
+    }
+    .div5629 label{
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .div5629 input{
+      background-color: transparent;
+      border-bottom: 1px dashed white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-size: small;
+      font-family: montserrat;
+      color: white;
+    }
+    .div5629 input:focus{
+      outline: none;
+    } 
+  
+  
+  .div57{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding-bottom: 15px;
+  }
+  
+  .div57 button {
+    width: 300px;
+    height: 40px;
+    background-color: #575756;
+    border: 1px solid #575756;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-family: montserrat;
+    font-weight: 400;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+  }
+  .div57 button img {
+    width: 20px;
+  }
+  .div57 input{
+    width: 300px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 30px;
+    padding: 15px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-family: montserrat;
+    font-size: medium;
+  }
+  /* Estilos para el segundo popup */
+#popup-archivos-2 {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#popup-archivos-2 .popup-content {
+  background: grey;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 400px;
+}
+
+#popup-archivos-2 .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#popup-archivos-2 .popup-btn {
+  margin-top: 10px;
+}
+
+/* Estilos adicionales para la lista de archivos seleccionados del segundo popup */
+#selected-files-list-2 {
+  list-style: none;
+  padding: 0;
+}
+
+#selected-files-list-2 .selected-list-item {
+  margin-bottom: 5px;
+}
+
+  .selected-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 50px;
+    overflow-y: auto;
+    max-height: 150px;
+  }
+  .selected-list-item {
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    margin-top: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: medium;
+    font-family: montserrat;
+    font-weight: 300;
+  }
+  
+  .trash-icon {
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Estilos para personalizar el scroll */
+  .selected-list::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+  }
+  
+  .selected-list::-webkit-scrollbar-track {
+    background: rgb(192, 192, 192); /* Color del fondo del scrollbar */
+  }
+  
+  .selected-list::-webkit-scrollbar-thumb {
+    background: grey; /* Color del scrollbar */
+  }
+  
+  .selected-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del scrollbar al pasar el cursor sobre él */
+  }
+  .file-name {
+    flex: 1;
+  }
+  
+  .action-button {
+    margin-left: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Interruptor*/
+
+
+input[name=interruptor]{
+  display: none;
+}
+
+
+label{
+    color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.interruptor-cuerpo{
+    margin-left: 1015px;
+    margin-bottom: -50px;
+    width: 40px;
+    height: 22px;
+    box-shadow: 0px 0px 5px #8A8A8A inset;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color .25s;
+}
+.interruptor-cuerpo label img{
+    width: 10px;
+}
+.interruptor-tecla{
+    position: relative;
+    left:0;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 2px #8A8A8A;
+    background-color: white;
+    border-radius: 50%;
+    transition: left .25s;
+}
+
+#apagado:checked ~ .interruptor-cuerpo .interruptor-tecla{
+    left:0px;
+}
+
+#apagado:checked ~ .interruptor-cuerpo .interruptor-tecla label[for=apagado]{
+    display: none
+}
+
+#prendido:checked ~ .interruptor-cuerpo .interruptor-tecla{
+    left:20px;
+}
+
+#prendido:checked ~ .interruptor-cuerpo{
+    background-color: #A2DA6C;
+}
+
+#prendido:checked ~ .interruptor-cuerpo .interruptor-tecla label[for=prendido]{
+    display: none
+}
+
+
+.interruptor-cuerpo{
+    margin-left: 1015px;
+    margin-bottom: -50px;
+    width: 40px;
+    height: 22px;
+    box-shadow: 0px 0px 5px #8A8A8A inset;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color .25s;
+}
+.interruptor-cuerpo label img{
+    width: 10px;
+}
+.interruptor-tecla{
+    position: relative;
+    left:0;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 2px #8A8A8A;
+    background-color: white;
+    border-radius: 50%;
+    transition: left .25s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Interruptor 2*/
+input[name=botondos]{
+  display: none;
+}
+
+.teclabotondos label{
+  color: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+.cuerpobotondos{
+  margin-left: 1015px;
+  margin-bottom: -50px;
+  width: 40px;
+  height: 22px;
+  box-shadow: 0px 0px 5px #8A8A8A inset;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color .25s;
+}
+
+.cuerpobotondos label img{
+  width: 10px;
+}
+
+.teclabotondos{
+  position: relative;
+  left:0;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 0 2px #8A8A8A;
+  background-color: white;
+  border-radius: 50%;
+  transition: left .25s;
+}
+
+#off:checked ~ .cuerpobotondos .teclabotondos{
+  left:0px;
+}
+
+#off:checked ~ .cuerpobotondos .teclabotondos label[for=off]{
+  display: none
+}
+
+#on:checked ~ .cuerpobotondos .teclabotondos{
+  left:20px;
+}
+
+#on:checked ~ .cuerpobotondos{
+  background-color: #A2DA6C;
+}
+
+#on:checked ~ .cuerpobotondos .teclabotondos label[for=on]{
+  display: none
+}
+
+
+
+
+
+input[name=botondos1] {
+  display: none;
+}
+
+.cuerpobotondos1 {
+  margin-left: 1015px;
+  margin-bottom: -50px;
+  width: 40px;
+  height: 22px;
+  box-shadow: 0px 0px 5px #8A8A8A inset;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color .25s;
+}
+
+.cuerpobotondos1 label img {
+  width: 10px;
+}
+
+.teclabotondos1 {
+  position: relative;
+  left:0;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 0 2px #8A8A8A;
+  background-color: white;
+  border-radius: 50%;
+  transition: left .25s;
+}
+
+#off1:checked ~ .cuerpobotondos1 .teclabotondos1 {
+  left:0px;
+}
+
+#off1:checked ~ .cuerpobotondos1 .teclabotondos1 label[for=off1] {
+  display: none;
+}
+
+#on1:checked ~ .cuerpobotondos1 .teclabotondos1 {
+  left:20px;
+}
+
+#on1:checked ~ .cuerpobotondos1 {
+  background-color: #A2DA6C;
+}
+
+#on1:checked ~ .cuerpobotondos1 .teclabotondos1 label[for=on1] {
+  display: none;
+}
+
+
+
+
+input[name=nuevo-interruptor] {
+  display: none;
+}
+
+.nuevo-interruptor-cuerpo {
+  margin-left: 1015px;
+  margin-bottom: -50px;
+  width: 40px;
+  height: 22px;
+  box-shadow: 0px 0px 5px #8A8A8A inset;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color .25s;
+}
+
+.nuevo-interruptor-cuerpo label img {
+  width: 10px;
+}
+
+.nuevo-interruptor-tecla {
+  position: relative;
+  left:0;
+  text-align: center;
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 0 2px #8A8A8A;
+  background-color: white;
+  border-radius: 50%;
+  transition: left .25s;
+}
+
+#nuevo-apagado:checked ~ .nuevo-interruptor-cuerpo .nuevo-interruptor-tecla {
+  left:0px;
+}
+
+#nuevo-apagado:checked ~ .nuevo-interruptor-cuerpo .nuevo-interruptor-tecla label[for=nuevo-apagado] {
+  display: none;
+}
+
+#nuevo-prendido:checked ~ .nuevo-interruptor-cuerpo .nuevo-interruptor-tecla {
+  left:20px;
+}
+
+#nuevo-prendido:checked ~ .nuevo-interruptor-cuerpo {
+  background-color: #A2DA6C;
+}
+
+#nuevo-prendido:checked ~ .nuevo-interruptor-cuerpo .nuevo-interruptor-tecla label[for=nuevo-prendido] {
+  display: none;
+}
+
+.contactoinput h2{
+  font-size: x-large;
+  font-family: montserrat;
+  font-weight: 200;
+  color: white;
+}
+.contactoinput input:focus{
+  outline: none;
+}
+.contactoinput textarea{
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 30px;
+  font-size: medium;  
+  font-family: montserrat;
+  font-weight: 300;
+  color: white;
+  padding: 30px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.contactoinput button{
+    border: 1px solid white;
+    border-radius: 30px;
+    font-size: 20px;
+    font-family: montserrat;
+    font-weight: 200;
+    background-color: transparent;
+    color: white;
+    padding: 6px 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.contactoinput button:hover {
+  cursor: pointer;
+}
+.contactoinput button img{
+  width: 12px;
+  margin-right: 20px;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+}
+.calendarioo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.calendarioo button{
+margin-bottom: 22px;
+}
+
+
+/*Interruptor*/
+
+
+/* Nuevo Estilo de Interruptor */
+
+input[name=interruptorNuevo]{
+  display: none;
+}
+
+label{
+    color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.cuerpoInterruptorNuevo{
+    margin-left: 1015px;
+    margin-bottom: -50px;
+    width: 40px;
+    height: 22px;
+    box-shadow: 0px 0px 5px #8A8A8A inset;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color .25s;
+}
+
+.cuerpoInterruptorNuevo label img{
+    width: 10px;
+}
+
+.teclaInterruptorNuevo{
+    position: relative;
+    left:0;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 2px #8A8A8A;
+    background-color: white;
+    border-radius: 50%;
+    transition: left .25s;
+}
+
+#interruptorApagado:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo{
+    left:0px;
+}
+
+#interruptorApagado:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo label[for=interruptorApagado]{
+    display: none
+}
+
+#interruptorPrendido:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo{
+    left:20px;
+}
+
+#interruptorPrendido:checked ~ .cuerpoInterruptorNuevo{
+    background-color: #A2DA6C;
+}
+
+#interruptorPrendido:checked ~ .cuerpoInterruptorNuevo .teclaInterruptorNuevo label[for=interruptorPrendido]{
+    display: none
+}
+
+
+.div58{
+
+  margin-bottom: 100px;
+}
+
+.div58 h2{
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 500;
+  color: white;
+  margin: 30px;
+}
+.div58 p{
+  font-size: 16px;
+  font-family: montserrat;
+  font-weight: 300;
+  color: white;
+  margin: 30px;
+}
+.div58 textarea{
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 30px;
+  font-size: medium;  
+  font-family: montserrat;
+  font-weight: 300;
+  color: white;
+  padding: 30px;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+.div581 button{
+  border: 1px solid grey;
+  border-radius: 12px;
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 300;
+  background-color: grey;
+  color: white;
+  padding: 6px 30px;
+}
+
+.div581 {
+  display: flex;
+  align-items: center;
+}
+.calendariooo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.calendariooo button{
+background-color: transparent;
+border-radius: 50px;
+}
+.calendariooo h2{
+  font-size: x-large;
+  font-family: montserrat;
+  font-weight: 200;
+}
