@@ -223,14 +223,26 @@ body {
   padding: 20px;
   align-items: center;
 }
-.div1 h1 {
-  width: 50%;
-  font-size: 14px;
+.div1 input {
+  width: 75%;
+  height: 40px;
+  background-color: transparent;
+  font-size: 18px;
   font-family: montserrat;
   font-weight: 400;
   text-align: center;
+  border: none;
+  border-bottom: 1px solid white;
   color: white;
-  border-bottom: 1px solid grey;
+}
+.div1 input:focus{
+  outline: none;
+}
+.div1 h5{
+  font-size: 24 px;
+  font-family: montserrat;
+  font-weight: 200;
+  color: white;
 }
 .div2 {
   width: 20%;
@@ -485,6 +497,38 @@ body {
   font-weight: 400;
   text-align: center;
   color: white;
+}
+.nuevoseg {
+  width: 39%;
+  display: flex;
+  justify-content: center;
+}
+.nuevoseg button {
+  border: 1px solid grey;
+  background: transparent;
+  border-radius: 30px;
+}
+.nuevoseg img {
+  width: 20px;
+  height: auto;
+  margin-right: 11px;
+  margin-left: 11px;
+}
+.nuevoseg button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.nuevoseg button h5 {
+  color: white;
+  font-size: 12px;
+  font-family: montserrat;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px;
+  margin-right: 20px;
 }
 .div53 {
   width: 100%;
@@ -880,4 +924,78 @@ body {
 
 .action-button {
   margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.nuevoseg {
+  margin: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(103, 103, 103);
+}
+.modal-bg {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+}
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.optionBtn {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(55,55,55,0.8);
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.optionBtn:hover {
+  background-color: rgba(55,55,55,0.8);
 }
