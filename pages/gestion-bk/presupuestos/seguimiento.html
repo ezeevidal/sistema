@@ -132,8 +132,8 @@
   <!--Seccion 2-->
   <div class="div5">
     <div class="div51">
-      <button style="background-color: rgb(55, 55, 55);font-weight: 400;"><img
-          src="../../../Assets/Recurso 5Acopio.png" alt="">Seguimiento</button>
+      <button style="background-color: rgb(55, 55, 55);font-weight: 400;"><img src="../../../Assets/Recurso 5Acopio.png"
+          alt="">Seguimiento</button>
       <button><img src="../../../Assets/Recurso 6Acopio.png" alt="">Solicitud</button>
       <button><img src="../../../Assets/Recurso 6Acopio.png" alt="">Presupuesto</button>
       <button><img src="../../../Assets/Recurso 6Acopio.png" alt="">Mesada</button>
@@ -143,44 +143,93 @@
       <span>SEGUIMIENTO</span>
       <div class="nuevoseg" id="openModalBtn">
         <button>
-            <img src="../../../Assets/Recurso 21.png" alt=""><h5>Nuevo seguimiento</h5>
+          <img src="../../../Assets/Recurso 21.png" alt="">
+          <h5>Nuevo seguimiento</h5>
         </button>
-    </div>
+        <input type="search" placeholder="Buscar...">
+      </div>
+      <div style="color: white;margin-bottom: 50px;margin-top: -60px;"><hr></div>
+<!--El boton anterior debe abrir el siguiente modal-->
+      <!-- Modal -->
+      <div class="modal-bg" id="myModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Agregar seguimiento</h2>
+            <button class="close" style="border: none; font-size: 34px; background-color: transparent;" 
+            onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'" 
+            onmouseout="this.style.backgroundColor='transparent'" 
+            onmousedown="this.style.backgroundColor='rgba(0, 0, 0, 0.3)'" 
+            onmouseup="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'" 
+            onclick="this.style.backgroundColor='transparent'">&times;</button>
+          </div>
+          <button>Contactado</button>
+          <button>Cotizado</button>
+          <button>Comentario</button>
+          <button>Vendido</button>
+          <input type="date" id="fecha">
+          <textarea name="" id="observaciones" cols="40" rows="2" placeholder="Observaciones..."></textarea>
+          <button id="agregarBtn">Agregar seguimiento</button>
+        </div>
+      </div>
+      
+      <script>
+        // Obtener referencia al botón "Nuevo seguimiento" y al modal
+        const nuevoSeguimientoBtn = document.getElementById("openModalBtn");
+        const modal = document.getElementById("myModal");
+      
+        // Agregar evento de clic al botón "Nuevo seguimiento"
+        nuevoSeguimientoBtn.addEventListener("click", function() {
+          // Mostrar el modal
+          modal.style.display = "block";
+        });
+      
+        // Cerrar el modal si se hace clic en el botón de cerrar
+        document.querySelector(".close").addEventListener("click", function() {
+          modal.style.display = "none";
+        });
+      </script>
 
-    <div class="modal-bg" id="myModal">
-      <div class="modal-content">
-          <button class="close">&times;</button>
-          <button class="optionBtn">Contactado</button>
-          <button class="optionBtn">Cotizado</button>
-          <button class="optionBtn">Vendido</button>
-          <button class="optionBtn">No vendido</button>
-          <button class="optionBtn">Comentario</button>
+<!--LA OPCION SELECCIONADA DEBE AGREGAR EL ELEMENTO DEL GRID QUE SE ENCUENTRA ABAJO.-->
+
+      <div class="parent-1" id="contactado">
+        <div class="div1-1"><img src="../../../Assets/1x/Recurso 1.svg" alt=""> </div>
+        <div class="div2-1">Contactado</div>
+        <div class="div3-1">00/00/0000  |   Observaciones</div>
       </div>
-  </div>
-        <script>
-          document.getElementById("openModalBtn").onclick = function() {
-            document.getElementById("myModal").style.display = "block";
-        };
-        
-        document.querySelectorAll(".close").forEach(function(closeBtn) {
-            closeBtn.onclick = function() {
-                document.getElementById("myModal").style.display = "none";
-            };
-        });
-        
-        document.querySelectorAll(".optionBtn").forEach(function(optionBtn) {
-            optionBtn.onclick = function() {
-                // Aquí puedes agregar lo que quieras que haga cada botón
-                console.log("Se seleccionó la opción: " + optionBtn.textContent);
-                document.getElementById("myModal").style.display = "none"; // Cerrar el modal después de hacer clic en una opción
-            };
-        });
-        
-        </script>
-    
+
+      <div class="parent-1" id="cotizado">
+        <div class="div1-1"><img src="../../../Assets/1x/Copia de Recurso 1.svg" alt=""> </div>
+        <div class="div2-1">Cotizado</div>
+        <div class="div3-1">00/00/0000  |   Observaciones</div>
       </div>
+
+      <div class="parent-1" id="comentario">
+        <div class="div1-1"><img src="../../../Assets/1x/Recurso 2.svg" alt=""> </div>
+        <div class="div2-1">Comentario</div>
+        <div class="div3-1">00/00/0000  |   Observaciones</div>
+      </div>
+
+      <div class="parent-1" id="Vendido">
+        <div class="div1-1"><img src="../../../Assets/1x/Recurso 3.svg" alt=""> </div>
+        <div class="div2-1">Vendido</div>
+        <div class="div3-1">00/00/0000  |   Observaciones</div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
+  </div>
+
+
 
 
 
@@ -332,7 +381,16 @@
       // Cerrar el popup de archivos
       document.getElementById('popup-archivos').style.display = 'none';
     });
-  </script>
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>

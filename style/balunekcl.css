@@ -235,10 +235,10 @@ body {
   border-bottom: 1px solid white;
   color: white;
 }
-.div1 input:focus{
+.div1 input:focus {
   outline: none;
 }
-.div1 h5{
+.div1 h5 {
   font-size: 24 px;
   font-family: montserrat;
   font-weight: 200;
@@ -490,6 +490,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 30px;
+
 }
 .div52 span {
   font-size: 14px;
@@ -499,14 +500,19 @@ body {
   color: white;
 }
 .nuevoseg {
-  width: 39%;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .nuevoseg button {
   border: 1px solid grey;
   background: transparent;
   border-radius: 30px;
+}
+.nuevoseg input{
+  border: 1px solid grey;
+  border-radius: 50px;
+  background-color: transparent;
 }
 .nuevoseg img {
   width: 20px;
@@ -537,246 +543,245 @@ body {
   flex-direction: column;
   margin: 50px;
 }
-.div54{
-    width: 100%;
-    height: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.div54 {
+  width: 100%;
+  height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.div54 span{
-    font-size: 20px;
-    font-family: montserrat;
-    font-weight: 300px;
-    color: white;
+.div54 span {
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 300px;
+  color: white;
 }
 .div55 {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    column-gap: 150px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  column-gap: 150px;
 }
-  
-  .div551 {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-  }
-  .div552{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .div552 p{
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    margin-right: 10px;
-    align-items: flex-end;
-  }
-  .div552 input{
-    background-color: transparent;
-    border-bottom: 1px dashed white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    width: 60%;
-  }
-  .div552 input:focus{
-    outline: none;
-  }
-  .div56{
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-  }
-  .div561{
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .div561 span{
-    font-size: 20px;
-    font-family: montserrat;
-    font-weight: 300px;
-    color: white;
-    margin-right: 10px;
-    align-items: flex-end;
-  }
-  .div562 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .div5621 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .div562 input[type="radio"] {
-    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px; /* Ajusta el tamaño según sea necesario */
-    height: 20px; /* Ajusta el tamaño según sea necesario */
-    border: 1px solid grey; /* Establece el borde de 1px color grey */
-    border-radius: 50%; /* Hace que el radio button tenga forma circular */
-    outline: none; /* Elimina el contorno al enfocar */
-    background-color: transparent; 
-    cursor: pointer; 
-  }
-  
-  .div562 input[type="radio"]:checked {
-    background-color: #009607;
-    border-color: #009607;
-  }
-  
-  .div5621 label{
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    margin-left: 10px;
-  }
-  .div563 {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .div563 input[type="radio"] {
-    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px; /* Ajusta el tamaño según sea necesario */
-    height: 20px; /* Ajusta el tamaño según sea necesario */
-    border: 1px solid grey; /* Establece el borde de 1px color grey */
-    border-radius: 50%; /* Hace que el radio button tenga forma circular */
-    outline: none; /* Elimina el contorno al enfocar */
-    background-color: transparent; 
-    cursor: pointer; 
-  }
-  
-  .div563 input[type="radio"]:checked {
-    background-color: #009607;
-    border-color: #009607;
-  }
-  .div5631{
-    display: flex;
-    flex-direction: row;
-    width: 220px;
-    justify-content: flex-start;
-    margin-top: 30px;
-  }
-  .div5631 label{
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    margin-left: 10px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-  }
-  .div5631 input{
-    background-color: transparent;
-    border-bottom: 1px dashed white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    width: 100%;
-  }
-  .div5631 input:focus{
-    outline: none;
-  } 
-  .div5632{
-    display: flex;
-    flex-direction: row;
-    width: 1700px;
-    justify-content: flex-start;
-    margin-top: 30px;
-  }
-  .div5632 label{
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    margin-left: 10px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
-  }
-  .div5632 input{
-    background-color: transparent;
-    border-bottom: 1px dashed white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    width: 100%;
-  }
-  .div5632 input:focus{
-    outline: none;
-  } 
-  .div5519{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  .div5629{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .div5629 input[type="radio"]{
-    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px; /* Ajusta el tamaño según sea necesario */
-    height: 20px; /* Ajusta el tamaño según sea necesario */
-    border: 1px solid grey; /* Establece el borde de 1px color grey */
-    border-radius: 50%; /* Hace que el radio button tenga forma circular */
-    outline: none; /* Elimina el contorno al enfocar */
-    background-color: transparent; 
-    cursor: pointer; 
-  }
-  
-  .div5629 input[type="radio"]:checked {
-    background-color: #009607;
-    border-color: #009607;
-  }
-  .div5629 label{
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  .div5629 input{
-    background-color: transparent;
-    border-bottom: 1px dashed white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: small;
-    font-family: montserrat;
-    color: white;
-  }
-  .div5629 input:focus{
-    outline: none;
-  } 
 
+.div551 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.div552 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.div552 p {
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  margin-right: 10px;
+  align-items: flex-end;
+}
+.div552 input {
+  background-color: transparent;
+  border-bottom: 1px dashed white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  width: 60%;
+}
+.div552 input:focus {
+  outline: none;
+}
+.div56 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.div561 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.div561 span {
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 300px;
+  color: white;
+  margin-right: 10px;
+  align-items: flex-end;
+}
+.div562 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-.div57{
+.div5621 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div562 input[type="radio"] {
+  -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Ajusta el tamaño según sea necesario */
+  height: 20px; /* Ajusta el tamaño según sea necesario */
+  border: 1px solid grey; /* Establece el borde de 1px color grey */
+  border-radius: 50%; /* Hace que el radio button tenga forma circular */
+  outline: none; /* Elimina el contorno al enfocar */
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.div562 input[type="radio"]:checked {
+  background-color: #009607;
+  border-color: #009607;
+}
+
+.div5621 label {
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  margin-left: 10px;
+}
+.div563 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.div563 input[type="radio"] {
+  -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Ajusta el tamaño según sea necesario */
+  height: 20px; /* Ajusta el tamaño según sea necesario */
+  border: 1px solid grey; /* Establece el borde de 1px color grey */
+  border-radius: 50%; /* Hace que el radio button tenga forma circular */
+  outline: none; /* Elimina el contorno al enfocar */
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.div563 input[type="radio"]:checked {
+  background-color: #009607;
+  border-color: #009607;
+}
+.div5631 {
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.div5631 label {
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.div5631 input {
+  background-color: transparent;
+  border-bottom: 1px dashed white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  width: 100%;
+}
+.div5631 input:focus {
+  outline: none;
+}
+.div5632 {
+  display: flex;
+  flex-direction: row;
+  width: 1700px;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.div5632 label {
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+.div5632 input {
+  background-color: transparent;
+  border-bottom: 1px dashed white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  width: 100%;
+}
+.div5632 input:focus {
+  outline: none;
+}
+.div5519 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.div5629 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.div5629 input[type="radio"] {
+  -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Ajusta el tamaño según sea necesario */
+  height: 20px; /* Ajusta el tamaño según sea necesario */
+  border: 1px solid grey; /* Establece el borde de 1px color grey */
+  border-radius: 50%; /* Hace que el radio button tenga forma circular */
+  outline: none; /* Elimina el contorno al enfocar */
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.div5629 input[type="radio"]:checked {
+  background-color: #009607;
+  border-color: #009607;
+}
+.div5629 label {
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.div5629 input {
+  background-color: transparent;
+  border-bottom: 1px dashed white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: small;
+  font-family: montserrat;
+  color: white;
+}
+.div5629 input:focus {
+  outline: none;
+}
+
+.div57 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -808,7 +813,7 @@ body {
 .div57 button img {
   width: 20px;
 }
-.div57 input{
+.div57 input {
   width: 300px;
   height: 40px;
   border: 1px solid grey;
@@ -926,76 +931,164 @@ body {
   margin-left: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
 .nuevoseg {
-  margin: 20px;
+  margin-top: 50px;
+  border: none;
+  margin-bottom: 100px;
+}
+.nuevoseg input{
+  width: 300px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 30px;
+  padding: 15px;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  font-family: montserrat;
+  font-size: small;
+}
+.nuevoseg button:hover {
+  cursor: pointer;
+  background-color: grey;
+  color: white;
+  border-color: grey;
+}
+.nuevoseg hr{
+  color: white;
+}
+.parent-1 {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(103, 103, 103);
+.div1-1 {
+  grid-area: 1 / 1 / 3 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.div1-1 img {
+  width: 30px;
+}
+
+.div2-1 {
+  grid-area: 1 / 2 / 2 / 3;
+  border-bottom: 1px solid white;
+  font-size: 20px;
+  font-family: montserrat;
+  font-weight: 300;
+  color: white;
+}
+
+.div3-1 {
+  grid-area: 2 / 2 / 3 / 3;
+  color: white;
+  font-size: 16px;
+  font-family: montserrat;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.div2-1 p,
+.div3-1 p {
+  margin: 0;
+}
+
 .modal-bg {
   display: none;
   position: fixed;
-  z-index: 1;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
-.modal-content {
-  background-color: #ffffff;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid white;
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(55, 55, 55);
   border-radius: 10px;
-  width: 60%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.modal-header{
+  display: flex;
+flex-direction: row;
+justify-content: end;
+border: none;
+align-items: center;
+margin-top: -10px;
+}
+.modal-header h2{
+  color: white;
+  font-size: 14px;
+  font-family: montserrat;
+  font-weight: 300;
+  margin-right: 40px;
+  margin-top: 40px;
 }
 
+.modal-header button{
+  border: none;
+}
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.optionBtn {
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 50%;
-  border: 1px solid rgba(55,55,55,0.8);
   background-color: transparent;
-  color: #fff;
+  font-size: 24px;
+  border: none;
   cursor: pointer;
 }
 
-.optionBtn:hover {
-  background-color: rgba(55,55,55,0.8);
+
+.modal button{
+  border: 2px solid grey;
+  background-color: transparent;
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: montserrat;
+  font-weight: 300;
+  border-radius: 50px;
+}
+.modal button:hover{
+  cursor: pointer;
+  background-color: transparent;
+}
+.modal button:focus{
+  cursor: pointer;
+  background-color: grey;
+}
+.modal input{
+  border: 1px solid grey;
+  background-color: transparent;
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: montserrat;
+  font-weight: 300;
+  border-radius: 50px;
+}
+.modal textarea{
+  border: 1px solid grey;
+  background-color: transparent;
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: montserrat;
+  font-weight: 300;
+  resize: vertical;
+  border-radius: 10px;
+  padding-left: 20px;
 }
