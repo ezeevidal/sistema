@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="../style/mesada.css" />
+  <link rel="stylesheet" href="../../../style/mesada.css" />
   <link rel="shortcut icon" href="../Assets/icono.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escritorio</title>
 </head>
@@ -14,23 +15,23 @@
   <!--Usuarios-->
   <div class="users">
     <p>Inicio</p>
-    <a href="../pages/escritorio.html"><img src="../Assets/home.png" alt="" /></a>
+    <a href="../pages/escritorio.html"><img src="../../../Assets/home.png" alt="" /></a>
     <div id="cambiarUsuarioTrigger">
-      <img src="../Assets/Recurso 4.png" alt="Cambiar usuario" />
+      <img src="../../../Assets/Recurso 4.png" alt="Cambiar usuario" />
     </div>
     <div id="opcionesUsuario" style="display: none">
       <div class="avatar">
-        <img src="../Assets/Recurso 4.png" alt="" />
+        <img src="../../../Assets/Recurso 4.png" alt="" />
         <button class="opcionUsuario" data-usuario="Gerencia">
           Gerencia
         </button>
       </div>
       <div class="avatar">
-        <img src="../Assets/Recurso 4.png" alt="" />
+        <img src="../../../Assets/Recurso 4.png" alt="" />
         <button class="opcionUsuario" data-usuario="Ventas">Ventas</button>
       </div>
       <div class="avatar">
-        <img src="../Assets/Recurso 4.png" alt="" />
+        <img src="../../../Assets/Recurso 4.png" alt="" />
         <button class="opcionUsuario" data-usuario="Administracion">
           Administración
         </button>
@@ -62,7 +63,7 @@
       });
     </script>
     <!--Cerrar sesion-->
-    <img src="../Assets/logout.png" alt="" title="Cerrar sesión" />
+    <a href="../../../index.html"><img src="../../../Assets/logout.png" alt="" title="Cerrar sesión" /></a>
   </div>
 
   <div class="menu">
@@ -132,11 +133,11 @@
   <!--Seccion 2-->
   <div class="div5">
     <div class="div51">
-      <button><img src="../Assets/Copia de Recurso 3Acopio.png" alt="">Seguimiento</button>
-      <button><img src="../Assets/Recurso 5Acopio.png" alt="">Solicitud</button>
-      <button><img src="../Assets/Recurso 5Acopio.png" alt="">Presupuesto</button>
-      <button><img src="../Assets/Recurso 6Acopio.png" alt="">Mesada</button>
-      <button><img src="../Assets/Recurso 6Acopio.png" alt="">Equipamiento</button>
+      <a href="./seguimiento.html" style="text-decoration: none;"><button style="background-color: rgb(83, 83, 83);"><img src="../../../Assets/Copia de Recurso 3Acopio.png" alt="">Seguimiento</button></a>
+      <a href="./nuevocliente.html" style="text-decoration: none;"><button style="background-color: rgb(83, 83, 83);"><img src="../../../Assets/Recurso 5Acopio.png" alt="">Solicitud</button></a>
+      <a href="./presupuesto.html" style="text-decoration: none;"><button style="background-color: rgb(83, 83, 83);"><img src="../../../Assets/Recurso 5Acopio.png" alt="">Presupuesto</button></a>
+      <a href="#" style="text-decoration: none;"><button style="background-color: grey;"><img src="../../../Assets/Recurso 5Acopio.png" alt="">Mesada</button></a>
+      <a href="./equipamiento.html" style="text-decoration: none;"><button style="background-color: rgb(83, 83, 83);"><img src="../../../Assets/Recurso 6Acopio.png" alt="">Equipamiento</button></a>
     </div>
 
 
@@ -146,7 +147,8 @@
 
 
     <div class="div52">
-      <span>PRESUPUESTOS</span>
+      <span>MESADA</span>
+      <br><br><br>
 
       <!-- Primer interruptor -->
 
@@ -170,26 +172,97 @@
         <hr>
       </div>
 
-      <!-- Seccion archivos -->
-      <div class="div57">
-        <button id="open-popup-btn-archivos"><img src="../Assets/Recurso 21.png" alt="">Agregar mesada</button>
-        <input type="search" placeholder="Buscar...">
-      </div>
-      <!-- Popup -->
-      <div id="popup-archivos" class="popup" style="display: none;">
-        <div class="popup-content">
-          <span id="close-popup-archivos" class="close-btn">&times;</span>
-          <span style="font-size: large;" class="popup-title"><strong>Seleccionar archivos</strong></span> <br><br><br>
-          <input type="file" id="file-input" multiple>
-          <button id="add-files-btn" class="popup-btn">Agregar archivos</button>
-        </div>
-      </div>
-      <!-- Lista de archivos seleccionados -->
-      <div class="div58">
-        <ul id="selected-files-list" class="selected-list">
-          <!-- Aquí se agregarán los archivos seleccionados -->
-        </ul>
-      </div>
+
+
+
+
+<!-- Botón para abrir el nuevo popup -->
+<div class="primer-popup">
+<button id="open-popup-btn-nuevo"><img src="../../../Assets/Recurso 21.png" alt="">Agregar Mesada</button>
+</div>
+
+<!-- Overlay y contenido del popup -->
+<div class="popup-overlay" id="popup-overlay-nuevo" style="display: none;">
+  <div id="popup-nuevo" class="popup">
+    <div class="popup-content">
+      <span id="close-popup-nuevo" class="close-btn">&times;</span>
+      <span style="font-size: large;" class="popup-title"><strong>Seleccionar Mesada</strong></span> 
+      <button class="popup-option-btn">Mesada Cocina</button>
+      <button class="popup-option-btn">Mesada Lavadero</button>
+      <button class="popup-option-btn">Mesada Vanitory Principal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lista de opciones seleccionadas -->
+<div class="listado">
+  <ul id="selected-options-list" class="selected-list">
+    <!-- Aquí se agregarán las opciones seleccionadas -->
+  </ul>
+</div>
+
+<!-- Script para controlar la apertura y cierre del popup -->
+<script>
+  // Función para abrir el popup
+  document.getElementById('open-popup-btn-nuevo').addEventListener('click', function () {
+    document.getElementById('popup-overlay-nuevo').style.display = 'flex';
+  });
+  
+  // Función para cerrar el popup
+  document.getElementById('close-popup-nuevo').addEventListener('click', function () {
+    document.getElementById('popup-overlay-nuevo').style.display = 'none';
+  });
+
+  // Función para agregar la opción seleccionada a la lista
+  document.querySelectorAll('.popup-option-btn').forEach(function(option) {
+    option.addEventListener('click', function() {
+      var selectedOption = this.textContent;
+      addOptionToList(selectedOption);
+    });
+  });
+
+  // Función para agregar la opción seleccionada a la lista de opciones
+  function addOptionToList(option) {
+    var selectedList = document.getElementById('selected-options-list');
+    var newItem = document.createElement('li');
+    newItem.classList.add('selected-option-item');
+    newItem.textContent = option;
+
+    // Crear el botón de descarga
+    var downloadIcon = document.createElement('span');
+    downloadIcon.classList.add('action-icon');
+    downloadIcon.innerHTML = '&#x21E9;'; // Icono de descarga
+
+    // Crear el botón de eliminar
+    var deleteIcon = document.createElement('span');
+    deleteIcon.classList.add('action-icon');
+    deleteIcon.innerHTML = '&#x1F5D1;'; // Icono de borrar
+
+    // Agregar evento para descargar
+    downloadIcon.addEventListener('click', function() {
+      // Aquí puedes agregar la lógica para descargar la opción seleccionada
+      console.log('Descargando ' + option);
+    });
+
+    // Agregar evento para eliminar
+    deleteIcon.addEventListener('click', function() {
+      newItem.remove();
+    });
+
+    // Agregar los botones al elemento de la lista
+    newItem.appendChild(downloadIcon);
+    newItem.appendChild(deleteIcon);
+
+    // Agregar el nuevo elemento a la lista de opciones seleccionadas
+    selectedList.appendChild(newItem);
+
+    // Cerrar el popup después de seleccionar una opción
+    document.getElementById('popup-overlay-nuevo').style.display = 'none';
+  }
+</script>
+
+
+
 
 
 
@@ -266,29 +339,94 @@
         </span>
         <hr>
       </div>
-      <div class="div57">
-        <button id="open-popup-btn-archivos-2"><img src="../Assets/Recurso 21.png" alt="">Agregar archivos</button>
-        <input type="search" placeholder="Buscar...">
-      </div>
-      <!-- Popup -->
-      <div id="popup-archivos-2" class="popup">
+
+
+
+
+
+
+<!--
+      <button id="openPopup" class="nuevo-popup"><img src="../../../Assets/Recurso 21.png" alt="">Agregar Archivos</button>
+
+      <div id="popup" class="popup">
         <div class="popup-content">
-          <span id="close-popup-archivos-2" class="close-btn">&times;</span>
-          <span style="font-size: large;" class="popup-title"><strong>Agregar archivos</strong></span> <br><br><br>
-          <input type="file" id="file-input-2" multiple>
-          <button id="add-files-btn-2" class="popup-btn">Agregar archivos</button>
+          <span class="close">&times;</span>
+          <h2>Subir archivos</h2>
+          <input type="file" id="fileInput" multiple>
+          <button id="addToList">Agregar a lista</button>
         </div>
       </div>
-      <!-- Lista de archivos seleccionados -->
-      <div class="div58">
-        <ul id="selected-files-list-2" class="selected-list">
-          <!-- Aquí se agregarán los archivos seleccionados -->
-        </ul>
+      
+      <div id="fileListContainer">
+        <ul id="fileList"></ul>
       </div>
-      <!-- Fin seccion archivos -->
 
-      <!--FIN PRESUPUESTOS-->
 
+      <script>
+        document.getElementById("openPopup").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "block";
+});
+
+document.querySelector(".close").addEventListener("click", function() {
+  document.getElementById("popup").style.display = "none";
+});
+    document.getElementById("addToList").addEventListener("click", function() {
+  var files = document.getElementById("fileInput").files;
+  var ul = document.getElementById("fileList");
+
+  for (var i = 0; i < files.length; i++) {
+    var li = document.createElement("li");
+    li.innerHTML = '<span>' + files[i].name + '</span>';
+    
+    // Crear el icono de descarga
+    var downloadIcon = document.createElement('span');
+    downloadIcon.classList.add('action-icon');
+    downloadIcon.innerHTML = '&#x21E9;'; // Icono de descarga
+    li.appendChild(downloadIcon);
+    
+    // Crear el icono de eliminar
+    var deleteIcon = document.createElement('span');
+    deleteIcon.classList.add('action-icon');
+    deleteIcon.innerHTML = '&#x1F5D1;'; // Icono de borrar
+    li.appendChild(deleteIcon);
+
+    ul.appendChild(li);
+  }
+    // Cerrar el popup
+    document.getElementById("popup").style.display = "none";
+
+  // Agregar funcionalidad de descarga y eliminación
+  var downloadIcons = document.querySelectorAll(".action-icon:first-child");
+  var deleteIcons = document.querySelectorAll(".action-icon:last-child");
+  
+  downloadIcons.forEach(function(icon, index) {
+    icon.addEventListener("click", function() {
+      downloadFile(files[index]);
+    });
+  });
+  
+  deleteIcons.forEach(function(icon) {
+    icon.addEventListener("click", function(e) {
+      e.target.parentElement.remove();
+    });
+  });
+});
+
+function downloadFile(file) {
+  var blob = new Blob([file.name], { type: "text/plain" });
+  var url = window.URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = file.name;
+  document.body.appendChild(a);
+  a.click();
+  window.URL.revokeObjectURL(url);
+  document.body.removeChild(a);
+}
+
+
+      </script>
+ FIN PRESUPUESTOS-->
 
 
 
@@ -389,143 +527,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-    // Mostrar popup de archivos al hacer clic en el botón "Agregar archivos"
-    document.getElementById('open-popup-btn-archivos').addEventListener('click', function () {
-      document.getElementById('popup-archivos').style.display = 'flex';
-    });
-
-    // Cerrar popup de archivos al hacer clic en el botón "Cerrar"
-    document.getElementById('close-popup-archivos').addEventListener('click', function () {
-      document.getElementById('popup-archivos').style.display = 'none';
-    });
-
-    // Agregar archivos al hacer clic en el botón "Agregar archivos" dentro del popup
-    document.getElementById('add-files-btn').addEventListener('click', function () {
-      var fileInput = document.getElementById('file-input');
-      var files = fileInput.files;
-
-      // Iterar sobre los archivos seleccionados
-      for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-
-        // Crear un nuevo elemento de lista para cada archivo
-        var newItem = document.createElement('li');
-        newItem.classList.add('selected-list-item');
-        newItem.textContent = file.name;
-
-        // Crear el botón de acción para descargar el archivo
-        var downloadButton = document.createElement('img');
-        downloadButton.src = '../assets/descarga.png'; // Ruta de la imagen de descarga
-        downloadButton.alt = 'Descargar'; // Texto alternativo para la imagen de descarga
-        downloadButton.classList.add('action-button');
-
-        // Establecer el tamaño del botón de descarga
-        downloadButton.style.width = '20px'; // Ajusta el ancho según sea necesario
-        downloadButton.style.height = '20px'; // Ajusta la altura según sea necesario
-
-        // Añadir evento para descargar el archivo
-        (function (file) {
-          downloadButton.addEventListener('click', function () {
-            var downloadLink = document.createElement('a');
-            downloadLink.href = URL.createObjectURL(file);
-            downloadLink.download = file.name;
-            downloadLink.click();
-          });
-        })(file);
-
-        // Crear el botón de acción para eliminar el archivo
-        var trashIcon = document.createElement('img');
-        trashIcon.src = '../assets/carga.png'; // Ruta de la imagen de borrar
-        trashIcon.alt = 'Eliminar'; // Texto alternativo para la imagen de borrar
-        trashIcon.classList.add('action-button');
-
-        // Establecer el tamaño del icono de eliminar
-        trashIcon.style.width = '20px'; // Ajusta el ancho según sea necesario
-        trashIcon.style.height = '20px'; // Ajusta la altura según sea necesario
-
-        // Añadir evento para eliminar el archivo
-        trashIcon.addEventListener('click', function () {
-          // Obtener el elemento padre del ícono de basura (que sería el elemento <li> que contiene el ícono)
-          var listItem = this.parentNode;
-          // Eliminar el elemento <li> de la lista
-          listItem.remove();
-        });
-
-        // Agregar los botones al elemento de la lista
-        newItem.appendChild(downloadButton);
-        newItem.appendChild(trashIcon);
-
-        // Agregar el nuevo elemento a la lista de archivos seleccionados
-        document.getElementById('selected-files-list').appendChild(newItem);
-      }
-
-      // Limpiar el valor del input de archivo
-      fileInput.value = '';
-
-      // Cerrar el popup de archivos después de agregar archivos
-      document.getElementById('popup-archivos').style.display = 'none';
-    });
-  </script>
-
-
-
-
-
-
-
-  <script>
-    // Función para agregar archivos al popup y a la lista
-    function agregarArchivosPopup2() {
-      // Mostrar el popup al hacer clic en el botón "Agregar archivos"
-      document.getElementById('open-popup-btn-archivos-2').addEventListener('click', function () {
-        document.getElementById('popup-archivos-2').style.display = 'flex';
-      });
-
-      // Cerrar el popup al hacer clic en el botón "Cerrar"
-      document.getElementById('close-popup-archivos-2').addEventListener('click', function () {
-        document.getElementById('popup-archivos-2').style.display = 'none';
-      });
-
-      // Agregar archivos al hacer clic en el botón "Agregar archivos" dentro del popup
-      document.getElementById('add-files-btn-2').addEventListener('click', function () {
-        var fileInput = document.getElementById('file-input-2');
-        var files = fileInput.files;
-
-        // Iterar sobre los archivos seleccionados
-        for (var i = 0; i < files.length; i++) {
-          var file = files[i];
-
-          // Crear un nuevo elemento de lista para cada archivo
-          var newItem = document.createElement('li');
-          newItem.classList.add('selected-list-item');
-          newItem.textContent = file.name;
-
-          // Agregar el nuevo elemento a la lista de archivos seleccionados
-          document.getElementById('selected-files-list-2').appendChild(newItem);
-        }
-
-        // Limpiar el valor del input de archivo
-        fileInput.value = '';
-
-        // Cerrar el popup después de agregar archivos
-        document.getElementById('popup-archivos-2').style.display = 'none';
-      });
-    }
-
-    // Llamar a la función para ejecutar el código
-    agregarArchivosPopup2();
-  </script>
+  
 </body>
 </html>

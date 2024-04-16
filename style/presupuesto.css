@@ -848,7 +848,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
   }
   .popup-title {
     background-color: grey;
@@ -858,7 +858,7 @@ body {
     padding: 10px 20px;
     font-size: 20px;
     margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
   }
   .popup-btn:hover {
     cursor: pointer;
@@ -876,7 +876,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat;
 }
   .selected-list {
     list-style: none;

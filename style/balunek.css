@@ -58,25 +58,26 @@ body {
 .link {
   margin: 0 auto;
   text-align: center;
-  width: 100%;
+  width: 75%;
   margin-top: 3%;
   margin-bottom: 3%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .link a {
+  width: 100px;
   border: 1px solid grey;
   background: grey;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 50px;
+  padding-left: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 12px;
   font-family: montserrat;
-  font-weight: 200;
+  font-weight: 100;
   color: white;
   text-decoration: none;
 }
@@ -95,6 +96,7 @@ body {
   border: 1px solid grey;
   background: transparent;
   border-radius: 30px;
+  width: max-content;
 }
 .nuevop img {
   width: 20px;
@@ -111,12 +113,12 @@ body {
 }
 .nuevop button h5 {
   color: white;
-  font-size: 18px;
+  font-size: 12px;
   font-family: montserrat;
-  font-weight: 200;
+  font-weight: 100;
   margin: 0;
   padding: 10px;
-  margin-right: 20px;
+  margin-right: 70px;
 }
 #popupUsuario {
   display: flex;
